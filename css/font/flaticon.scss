@@ -1,0 +1,45 @@
+$flaticon-font: "flaticon";
+
+@font-face {
+    font-family: $flaticon-font;
+    src: url("./flaticon.ttf?3b1934921dbadbf8184af08ce133f8bc") format("truetype"),
+url("./flaticon.woff?3b1934921dbadbf8184af08ce133f8bc") format("woff"),
+url("./flaticon.woff2?3b1934921dbadbf8184af08ce133f8bc") format("woff2"),
+url("./flaticon.eot?3b1934921dbadbf8184af08ce133f8bc#iefix") format("embedded-opentype"),
+url("./flaticon.svg?3b1934921dbadbf8184af08ce133f8bc#flaticon") format("svg");
+}
+
+i[class^="flaticon-"]:before, i[class*=" flaticon-"]:before {
+    font-family: flaticon !important;
+    font-style: normal;
+    font-weight: normal !important;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+$flaticon-map: (
+    "devices": "\f101",
+    "github": "\f102",
+    "javascript": "\f103",
+    "version-control": "\f104",
+    "atom": "\f105",
+);
+
+.flaticon-devices:before {
+    content: map-get($flaticon-map, "devices");
+}
+.flaticon-github:before {
+    content: map-get($flaticon-map, "github");
+}
+.flaticon-javascript:before {
+    content: map-get($flaticon-map, "javascript");
+}
+.flaticon-version-control:before {
+    content: map-get($flaticon-map, "version-control");
+}
+.flaticon-atom:before {
+    content: map-get($flaticon-map, "atom");
+}
