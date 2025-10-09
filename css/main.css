@@ -1,15 +1,13 @@
-2f/*! HTML5 Boilerplate v8.0.0 | MIT License | https://html5boilerplate.com/ */
-
-/* main.css 2.1.0 | MIT License | https://github.com/h5bp/main.css#readme */
-/*
- * What follows is the result of much research on cross-browser styling.
- * Credit left inline and big thanks to Nicolas Gallagher, Jonathan Neal,
- * Kroc Camen, and the H5BP dev community and team.
- */
+/*! HTML5 Boilerplate v8.0.0 | MIT License | https://html5boilerplate.com/ */
 
 /* ==========================================================================
-   Base styles: opinionated defaults
+   Base styles
    ========================================================================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
 html {
   color: #222;
@@ -17,15 +15,11 @@ html {
   line-height: 1.4;
 }
 
-/*
- * Remove text-shadow in selection highlight:
- * https://twitter.com/miketaylr/status/12228805301
- *
- * Vendor-prefixed and regular ::selection selectors cannot be combined:
- * https://stackoverflow.com/a/16982510/7133471
- *
- * Customize the background color to match your design.
- */
+html,
+body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
 
 ::-moz-selection {
   background: #b3d4fc;
@@ -37,10 +31,6 @@ html {
   text-shadow: none;
 }
 
-/*
- * A better looking default horizontal rule
- */
-
 hr {
   display: block;
   height: 1px;
@@ -49,12 +39,6 @@ hr {
   margin: 1em 0;
   padding: 0;
 }
-
-/*
- * Remove the gap between audio, canvas, iframes,
- * images, videos and the bottom of their containers:
- * https://github.com/h5bp/html5-boilerplate/issues/440
- */
 
 audio,
 canvas,
@@ -65,694 +49,680 @@ video {
   vertical-align: middle;
 }
 
-/*
- * Remove default fieldset styles.
- */
-
 fieldset {
   border: 0;
   margin: 0;
   padding: 0;
 }
 
-/*
- * Allow only vertical resizing of textareas.
- */
-
 textarea {
   resize: vertical;
 }
-
-/* ==========================================================================
-   Author's custom styles
-   ========================================================================== */
-   /* font-family: 'Abril Fatface', cursive;
-   font-family: 'Josefin Sans', sans-serif;
-   font-family: 'Josefin Slab', serif;
-   *, */
-
-   /* COLOR PALETTE
-
-   #2f4454,
-   #2E151B,
-   #DA7B93,
-   #376e6f,
-   #1c3334,
-
-    */
-
-*::before,
-*::after {
-    box-sizing: border-box;
+i[class^="fa-"],
+i[class*=" fa-"] {
+  font-style: normal;
+  font-variant: normal;
+  text-rendering: auto;
+  line-height: 1;
 }
-
-/* Custom Properties, update these for your own design */
+/* ==========================================================================
+   Color Palette
+   ========================================================================== */
+/*
+   #0C0B1D,
+   #1B2845,
+   #EF476F,
+   #06D6A0,
+   #FFD166,
+   #F5F5F5
+*/
 
 :root {
-    --ff-primary: 'Josefin Sans', sans-serif;
-    --ff-secondary: 'Josefin Slab', serif;
-    
-    --fw-reg: 400;
-    --fw-bold: 600;
-    
-    --clr-light: #fff;
-    --clr-dark: #1c3334;
-    --clr-accent: #DA7b93;
-    --clr-background:#2f4454;
-    
-    --fs-h1: 3rem;
-    --fs-h2: 2.25rem;
-    --fs-h3: 1.25rem;
-    --fs-body: 1rem;
-    
-    --bs: 0.25em 0.25em 0.75em rgba(0,0,0,.25),
-          0.125em 0.125em 0.25em rgba(0,0,0,.15);
+  --ff-title: "Orbitron", sans-serif;
+  --ff-primary: "Inter", sans-serif;
+  --ff-secondary: "Share Tech Mono", monospace;
 
+  --ff-headers: "Exo 2", sans-serif;
+  --ff-buttons: "Share Tech Mono", monospace;
 
+  --fw-reg: 400;
+  --fw-bold: 600;
+
+  --clr-dark: #12071f; /* plum-black base */
+  --clr-light: #f5eaff; /* soft lilac white */
+  --clr-highlight: #d946ef; /* fuchsia-violet */
+  --clr-accent: #8be9fd; /* pastel cyan */
+  --clr-accent-secondary: #ffbdf7; /* pinkish glow accent */
+  --clr-background: #1b1032;
+
+  --fs-h1: 3rem;
+  --fs-h2: 2.25rem;
+  --fs-h3: 1.25rem;
+  --fs-body: 1rem;
+
+  --bs: 0.25em 0.25em 0.75em rgba(0, 0, 0, 0.25),
+    0.125em 0.125em 0.25em rgba(0, 0, 0, 0.15);
 }
 
 @media (min-width: 800px) {
-    :root {
-        --fs-h1: 4.5rem;
-        --fs-h2: 3.75rem;
-        --fs-h3: 1.5rem;
-        --fs-body: 1.125rem;
-    }
+  :root {
+    --fs-h1: 4.5rem;
+    --fs-h2: 3.75rem;
+    --fs-h3: 1.5rem;
+    --fs-body: 1.125rem;
+  }
 }
 
-/* General styles */
-
-/* endable this to add smooth scrolling */
-/* html {
-    scroll-behavior: smooth;
-} */
-
-
+/* ==========================================================================
+   General Styles
+   ========================================================================== */
 body {
-    background: var(--clr-light);
-    color: var(--clr-dark);
-    margin: 0;
-    font-family: var(--ff-primary);
-    font-size: var(--fs-body);
-    line-height: 1.6;
-  
-   
+  background: var(--clr-dark);
+  color: var(--clr-light);
+  font-family: var(--ff-primary);
+  font-size: var(--fs-body);
+  line-height: 1.6;
 }
 
 section {
-    padding: 5em 2em;
+  padding: clamp(2.5em, 6vw, 5em) 1.5em;
 }
 
 img {
-    display: block;
-    max-width: 100%;
-    
+  display: block;
+  max-width: 100%;
+  height: auto;
 }
-/* Typography */
 
+/* Typography */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--ff-headers);
+  /* optional for your neon theme */
+  letter-spacing: 1px;
+}
 h1,
 h2,
 h3 {
-    line-height: 1.1;
-    margin:0;
+  line-height: 1.1;
 }
 
-h1 {font-size: var(--fs-h1)}
-h2 {font-size: var(--fs-h2)}
-h3 {font-size: var(--fs-h3)}
+h1 {
+  font-size: clamp(2.2rem, 6vw, 4.5rem);
+}
+h2 {
+  font-size: clamp(1.8rem, 4.5vw, 3.75rem);
+}
+h3 {
+  font-size: clamp(1.2rem, 3.5vw, 1.5rem);
+}
 
-
-strong { font-weight: var(--fw-bold) }
+strong {
+  font-weight: var(--fw-bold);
+}
 
 :focus {
-    outline: 3px solid var(--clr-accent);
-    outline-offset: 3px;
-}
-
-/* Buttons */
-
-.btn,
-.portfolio-item-link {
-    display: inline-block;
-    padding: .5em 2.5em;
-    border-radius:30px;
-    background: var(--clr-accent);
-    color: var(--clr-dark);
-    text-decoration: none;
-    cursor: pointer;
-    font-size: .8rem;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    font-weight: var(--fw-bold);
-    
-    /* transition: transform 200ms ease-in-out; */
-}
-
-
-/* .portfolio-item-link{
-    background-color:var(--clr-accent);
-    padding: 2rem 1.75rem;
-    margin-top:2rem;
-    border-radius:30px;
-    color:var(--clr-light);
-    text-decoration: none;
-} */
-
-.portfolio-item-link:hover {
-    transform: scale(1.1);
-    margin-left:2px;
-}
-
-
-    #topBtn {
-    display:none;
-    position:fixed;
-    bottom:20px;
-    right:30px;
-    z-index:9999;
-    width:40px;
-    border:none;
-    background-color:var(--clr-accent);
-    color:white;
-    cursor:pointer;
-    padding:5px;
-    border-radius:10px;
-    box-shadow: 2px 2px #9e3e56;
-    opacity: .75;
-
-    
-
-}
-
-
-
-
-.section__title {
-    margin-bottom: .25em;
-}
-
-.section__title--intro {
-    font-weight: var(--fw-reg);
-}
-
-.section__title--intro strong {
-    display: block;
-}
-
-.section__subtitle {
-    margin: 0;
-    font-size: var(--fs-h3);
-}
-
-.section__subtitle--intro,
-.section__subtitle--about {
-    background: var(--clr-accent);
-    padding: .25em 1em;
-    font-family: var(--ff-secondary);
-    margin-bottom: 1em;
-}
-
-.section__subtitle--work {
-    color: var(--clr-accent);
-    font-weight: var(--fw-bold);
-    margin-bottom: 2em;
-}
-
-/* header */
-
-header {
-    display: flex;
-    justify-content: space-between;
-    padding: 1em;
-   
-}
-
-.logo {
-
-    max-width: 100px;
-   
-   
-}
-
-
-
-
-.nav {
-    position: fixed;
-    background: var(--clr-dark);
-    color: var(--clr-light);
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    z-index: 100;
-    
-    transform: translateX(100%);
-    transition: transform 250ms cubic-bezier(.5, 0, .5, 1);
-}
-
-.nav__list {
-    list-style: none;
-    display: flex;
-    height: 100%;
-    flex-direction: column;
-    justify-content: space-evenly;
-    align-items: center;
-    margin: 0;
-    padding: 0;
-}
-
-.nav__link {
-    color: inherit;
-    font-weight: var(--fw-bold);
-    font-size: var(--fs-h2);
-    text-decoration: none;
-}
-
-.nav__link:hover {
-    color: var(--clr-accent);
-}
-
-.nav-toggle {
-    padding: .5em;
-    background: transparent;
-    border: 0;
-    cursor: pointer;
-    position: absolute;
-    right: 1em;
-    top: 1em;
-    z-index: 1000;
-}
-
-.nav-open .nav {
-    transform: translateX(0);
-}
-
-.nav-open .nav-toggle {
-    position: fixed;
-}
-
-.nav-open .hamburger {
-    transform: rotate(.625turn);
-}
-
-.nav-open .hamburger::before {
-    transform: rotate(90deg) translateX(-6px);
-}
-
-.nav-open .hamburger::after {
-    opacity: 0;
-}
-
-
-.top{
-    background-color:var(--clr-accent);
-}
-
-
-
-.hamburger {
-    display: block;
-    position: relative;
-}
-
-.hamburger,
-.hamburger::before,
-.hamburger::after {
-    background: var(--clr-accent);
-    width: 2em;
-    height: 3px;
-    border-radius: 1em;
-    transition: transform 250ms ease-in-out;
-}
-
-
-.hamburger::before,
-.hamburger::after {
-    content: '';
-    position: absolute;
-    left: 0;
-    right: 0;
-}
-
-.hamburger::before { top: 6px; }
-.hamburger::after { bottom: 6px; }
-
-
-/*  Intro section  */
-
-.intro {
-    position: relative;
-  
-}
-
-.intro__img {
-    box-shadow: var(--bs);
-    width: 90%;
-    max-height:50vh;
-    
-   
-    
-
-
-}
-
-
-.section__subtitle--intro {
-    display: inline-block;
-}
-
-@media (min-width: 600px) {
-    .intro {
-        display: grid;
-        width: min-content;
-        margin: 0 auto;
-        grid-column-gap: 1em;
-        grid-template-areas: 
-            "img title"
-            "img subtitle";
-        grid-template-columns: min-content max-content;
-    }
-    
-    .intro__img {
-        grid-area: img;
-        min-width: 250px;
-        position: relative;
-        z-index: 2;
-        order: 2;
-    }    
-    
-    .section__subtitle--intro {
-        align-self: start;
-        grid-column: -1 / 1;
-        grid-row: 2;
-        text-align: right;
-        position: relative;
-        left: -1.5em;
-        width: calc(100% + 1.5em);
-    }
-}
-
-
-
-/*  My services section  */
-
-.my-skills {
-    background-color: var(--clr-dark);
-    background-image: url('../img/christina-wocintechchat-com-qmDoSkfcivI-unsplash.jpg');
-    background-size:cover;
-    background-blend-mode: multiply;
-    color: var(--clr-light);
-    text-align: center;
-}
-
-.section__title--skills {
-    color: var(--clr-accent);
-    position: relative;
-}
-
-.section__title--skills::after {
-    content: '';
-    display: block;
-    width: 2em;
-    height: 1px;
-    margin: 0.5em auto 1em;
-    background: var(--clr-light);
-    opacity: 0.25;
-}
-
-.skills{
-    margin-bottom: 4em;
-}
-
-.skill-item {
-    max-width: 500px;
-    margin: 0 auto;
-    margin-top:20px;
-}
-.flaticon{
-    font-size:var(--fs-h1);
-    color:white;
-
-}
-    
-@media (min-width: 800px) {
-    .skills {
-        display: flex;
-        max-width: 1000px;
-        margin-left: auto;
-        margin-right: auto;
-    }
-    
-    .skill-item + .skill-item{
-        margin-left: 5em;
-        text-align: relative;
-    }
-}
-
-
-.about-me {
-  
-    max-width: 1000px;
-    margin: 0 auto;
-}
-
-
-.about-me__img{
-    width:100%;
-    /* max-height: 60vh; */
-}
-
-
-
-
-
-@media (min-width: 600px) {
-    .about-me {
-        display: grid;
-        grid-template-columns: 1fr 200px;
-        grid-template-areas: 
-            "title img"
-            "subtitle img"
-            "text img";
-        grid-column-gap: 2em;
-    }
-    
-    .section__title--about {
-        grid-area: title;
-    }
-    
-    .section__subtitle--about {
-        grid-column: 1 / -1;
-        grid-row: 2;
-        position: relative;
-        left: -1em;
-        width: calc(100% + 2em);
-        padding-left: 1em;
-        padding-right: calc(200px + 4em);
-    }
-    
-    .about-me__img {
-        grid-area: img;
-        width:100%;
-        position: relative;
-        z-index: 2;
-        max-height:100vh;
-    }
-}
-
-/* My Work */
-
-.my-work {
-    background-color: var(--clr-dark);
-    color: var(--clr-light);
-    align-content: center;    
-}
-
-.portfolio {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    text-align:center;
-}
-
-.portfolio-item{
-    /* background: var(--clr-accent); */
-    /* overflow: hidden; */
-    margin: 40px 0 60px 0;
-    justify-content: space-between;
-    width:90%;
-
- 
-}
-
-
-
-/* 
-.portfolio__img{
-    transition:
-        transform 750ms cubic-bezier(.5, 0, .5, 1),
-        opacity 250ms linear;
-} */
-
-
-.portfolio-item:focus{
-    position:relative;
-    z-index:2;
-}
-
-/* .portfolio__img:hover,
-.portfolio__item:focus .portfolio__img {
-    transform: scale(.5);
-    opacity: .5;
-} */
-
-
-/* .portfolio-item-link:hover{
-    padding:2.5rem 2rem;
-    background-color:var(--clr-light);
-    border: radius 40px;
-} */
-
-
-
-/* footer */
-
-
-
-.footer {
-    /* background:#2E151B; */
-    background: var(--clr-dark);
-    color: var(--clr-accent);
-    text-align:center;
-    padding: 2.5em 0;
-    font-size: var(--fs-p);
-}
-
-.footer a{
-    color:inherit;
-    text-decoration:none;
-}
-
-.footer__link {
-    font-size: var(--fs-h3);
-    font-weight:var(--fw-bold);
-}
-
-.footer__link:hover,
-.social-list__link:hover{
-    opacity: .7;
-}
-
-.footer--link:hover{
-    text-decoration:underline;
-}
-
-.social-list{
-    list-style:none;
-    display:flex;
-    justify-content: center;
-    margin: 2em 0 0;
-    padding: 0;
-}
-
-.social-list__item{
-    margin:0 .5em;
-}
-
-.social-list__link{
-    padding: .5em;
-}
-
-/* .portfolio-item-individual{
-    padding: 0 2em 2em;
-    max-width: 1000px;
-    margin:0 auto;
-}
-
-.portfolio-item-individual p{
-    max-width: 800px;
-    margin-left: auto;
-    margin-right:auto;
-} */
-@media print,
-  (-webkit-min-device-pixel-ratio: 1.25),
-  (min-resolution: 1.25dppx),
-  (min-resolution: 120dpi) {
-  /* Style adjustments for high resolution devices */
+  outline: 3px solid var(--clr-accent);
+  outline-offset: 3px;
 }
 
 /* ==========================================================================
-   Print styles.
-   Inlined to avoid the additional HTTP request:
-   https://www.phpied.com/delay-loading-your-print-css/
+   Buttons
    ========================================================================== */
+.btn,
+.portfolio-item-link {
+  display: inline-block;
+  padding: 0.5em 2.5em;
+  border-radius: 30px;
+  background: var(--clr-accent);
+  color: var(--clr-dark);
+  text-decoration: none;
+  cursor: pointer;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: var(--fw-bold);
+  transition: transform 0.3s ease;
+}
 
-@media print {
-  *,
-  *::before,
-  *::after {
-    background: #fff !important;
-    color: #000 !important;
-    /* Black prints faster */
-    box-shadow: none !important;
-    text-shadow: none !important;
-  }
+.portfolio-item-link:hover {
+  transform: scale(1.1);
+}
 
-  a,
-  a:visited {
-    text-decoration: underline;
-  }
+#topBtn {
+  position: fixed;
+  bottom: 1.5rem;
+  right: 1.5rem;
+  width: 40px;
+  height: 40px;
+  border: none;
+  border-radius: 50%;
+  background-color: var(--clr-accent);
+  color: #fff;
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
 
-  a[href]::after {
-    content: " (" attr(href) ")";
-  }
+#topBtn.show {
+  opacity: 1;
+  pointer-events: all;
+  transform: translateY(0);
+}
 
-  abbr[title]::after {
-    content: " (" attr(title) ")";
-  }
+/* ==========================================================================
+   Header / Nav
+   ========================================================================== */
+header {
+  display: flex;
+  justify-content: space-between;
+  padding: 1em;
+}
 
-  /*
-   * Don't show links that are fragment identifiers,
-   * or use the `javascript:` pseudo protocol
-   */
-  a[href^="#"]::after,
-  a[href^="javascript:"]::after {
-    content: "";
-  }
+.logo {
+  max-width: 100px;
+}
 
-  pre {
-    white-space: pre-wrap !important;
-  }
+/* === GLASSMORPHIC SIDE PANEL === */
+.nav {
+  position: fixed;
+  top: 0;
+  right: 0;
+  height: 100vh;
+  width: min(80%, 320px); /* slides in as a panel */
+  z-index: 100;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform: translateX(100%);
+  transition: transform 0.4s ease-in-out;
 
-  pre,
-  blockquote {
-    border: 1px solid #999;
-    page-break-inside: avoid;
-  }
+  /* Glass effect */
+  backdrop-filter: blur(16px) saturate(180%);
+  background: rgba(15, 20, 40, 0.35);
+  border-left: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 0 25px rgba(6, 214, 160, 0.3);
+}
 
-  /*
-   * Printing Tables:
-   * https://web.archive.org/web/20180815150934/http://css-discuss.incutio.com/wiki/Printing_Tables
-   */
-  thead {
-    display: table-header-group;
-  }
+.nav-open .nav {
+  transform: translateX(0);
+}
 
-  tr,
-  img {
-    page-break-inside: avoid;
-  }
+/* center links inside the panel */
+.nav__list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 1.75rem;
+  text-align: right;
+  margin-right: 2rem;
+}
 
-  p,
-  h2,
-  h3 {
-    orphans: 3;
-    widows: 3;
-  }
+.nav__link {
+  color: #fff;
+  font-family: var(--ff-buttons);
+  font-size: clamp(1.2rem, 3vw, 1.8rem);
+  text-decoration: none;
+  letter-spacing: 1px;
+  transition: color 0.3s ease, text-shadow 0.3s ease;
+}
 
-  h2,
-  h3 {
-    page-break-after: avoid;
+.nav__link:hover {
+  color: #06d6a0;
+  text-shadow: 0 0 8px #06d6a0, 0 0 16px #06d6a0;
+}
+
+/* === HAMBURGER === */
+.nav-toggle {
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(6px);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 8px;
+  padding: 0.6em;
+  cursor: pointer;
+  position: fixed;
+  top: 1em;
+  right: 1em;
+  z-index: 999;
+  box-shadow: 0 0 12px rgba(6, 214, 160, 0.4);
+  transition: background 0.3s ease, box-shadow 0.3s ease;
+}
+
+.nav-toggle:hover {
+  background: rgba(6, 214, 160, 0.2);
+  box-shadow: 0 0 20px rgba(6, 214, 160, 0.6);
+}
+
+/* hamburger lines */
+.hamburger,
+.hamburger::before,
+.hamburger::after {
+  content: "";
+  display: block;
+  width: 28px;
+  height: 3px;
+  background: #fff;
+  border-radius: 3px;
+  transition: all 0.4s ease-in-out;
+}
+
+.hamburger::before {
+  transform: translateY(-8px);
+}
+.hamburger::after {
+  transform: translateY(5px);
+}
+
+/* active cross state */
+.nav-open .hamburger {
+  transform: rotate(45deg);
+}
+.nav-open .hamburger::before {
+  transform: rotate(90deg) translateX(0);
+}
+.nav-open .hamburger::after {
+  opacity: 0;
+}
+
+/* ==========================================================================
+   Neon Hero Section (Replaces old intro)
+   ========================================================================== */
+.intro {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  min-height: 100vh;
+  background: #000;
+  color: var(--clr-light);
+
+  padding: 4rem 1.5rem;
+}
+
+/* Name — glowing magenta shadow */
+.neon-title {
+  font-family: var(--ff-title);
+  font-size: clamp(2.5rem, 8vw, 6rem);
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  text-shadow: 0 0 5px #fff, 0 0 10px #f0a, 0 0 20px #f0a, 0 0 40px #f0a;
+  margin-bottom: 0.5em;
+}
+
+/* Subtitle — blue glow */
+.neon-subtitle {
+  font-family: var(--ff-secondary);
+  color: #7aefff;
+  font-size: clamp(1.25rem, 4vw, 2rem);
+  letter-spacing: 1px;
+  text-shadow: 0 0 4px #7aefff, 0 0 10px #7aefff;
+  margin-bottom: 1.5em;
+}
+
+.neon-typing {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: var(--ff-secondary);
+  font-size: clamp(1rem, 3vw, 1.5rem);
+  color: #06d6a0;
+  text-shadow: 0 0 6px #06d6a0, 0 0 14px #06d6a0;
+  white-space: nowrap;
+  margin-top: 1.5rem;
+}
+
+.cursor {
+  color: #ef476f;
+  text-shadow: 0 0 5px #ef476f, 0 0 10px #ef476f;
+  margin-left: 0.25em;
+  animation: blink 1s step-end infinite;
+}
+
+@keyframes blink {
+  50% {
+    opacity: 0;
   }
 }
 
+/* ==========================================================================
+   My Work
+   ========================================================================== */
+.section__title--work {
+  margin-bottom: 0.5em; /* space below “My Work” */
+}
+
+.section__subtitle--work {
+  margin-bottom: 2.5em; /* space before portfolio grid */
+  font-family: var(--ff-primary);
+  font-size: clamp(1rem, 2vw, 1.25rem);
+  color: #7aefff;
+  text-shadow: 0 0 6px rgba(122, 239, 255, 0.6);
+}
+.section__title h2 {
+  font-size: clamp(2.5rem, 6vw, 4.5rem);
+}
+.my-work {
+  background: var(--clr-dark);
+  color: var(--clr-light);
+  text-align: center;
+  padding: clamp(2em, 5vw, 3em);
+}
+
+.portfolio {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2em;
+}
+/* Portfolio Card Headings */
+.portfolio-item h4 {
+  font-family: var(--ff-headers); /* Orbitron */
+  font-size: clamp(1.25rem, 2.5vw, 1.75rem);
+  color: var(--clr-highlight);
+
+  letter-spacing: 1px;
+  margin-top: 1.5rem; /* ⬆️ space above */
+  margin-bottom: 1rem; /* ⬇️ space below */
+}
+
+/* Optional: tighten the project descriptions below */
+.project-item-description,
+.portfolio-item-description {
+  margin-bottom: 1.25rem;
+  line-height: 1.6;
+}
+
+@media (min-width: 600px) {
+  .portfolio {
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 2.5em;
+  }
+}
+
+@media (min-width: 1000px) {
+  .portfolio {
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 3em;
+  }
+}
+
+/* === Retro-Wave Teal Glow for cards === */
+.portfolio-item {
+  color: var(--clr-light);
+
+  border: 1px solid rgba(6, 214, 160, 0.4);
+  border-radius: 16px;
+  box-shadow: 0 0 8px rgba(6, 214, 160, 0.4), 0 0 16px rgba(6, 214, 160, 0.25),
+    0 0 24px rgba(6, 214, 160, 0.15);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  padding: 2rem 1.5rem;
+}
+
+.portfolio-item:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 0 12px rgba(6, 214, 160, 0.6), 0 0 30px rgba(6, 214, 160, 0.45),
+    0 0 45px rgba(6, 214, 160, 0.3);
+}
+.portfolio-item p {
+  margin-bottom: 1.25rem;
+  line-height: 1.6;
+}
+
+.portfolio-item p span {
+  font-weight: 600;
+  color: var(--clr-accent-secondary);
+}
+/* ==========================================================================
+   Skills Section — Clean Icon Section (no cards)
+   ========================================================================== */
+.my-skills {
+  background-color: var(--clr-dark);
+  color: var(--clr-light);
+  text-align: center;
+  padding-block: clamp(3em, 6vw, 5em);
+}
+
+.skills {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 3rem;
+  align-items: start;
+  justify-items: center;
+}
+
+.skill {
+  text-align: center;
+  color: var(--clr-light);
+}
+
+/* === ICONS  === */
+.skill i {
+  font-size: 24px;
+  color: #ff5ed9;
+  display: block;
+  margin-bottom: 1rem;
+}
+
+/* === TITLES === */
+.skill h3 {
+  font-family: var(--ff-headers);
+  font-size: clamp(1.1rem, 2.5vw, 1.4rem);
+  color: #7aefff;
+  text-shadow: 0 0 6px #7aefff, 0 0 12px rgba(122, 239, 255, 0.6);
+  margin: 0;
+}
+
+/* ==========================================================================
+   My Story Section — Glowing Border Variant
+   ========================================================================== */
+.my-story {
+  background: var(--clr-dark);
+  color: var(--clr-light);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: clamp(3rem, 6vw, 5rem) 1.5rem;
+}
+
+/* Floating glass card with glow only around edges */
+.story-card {
+  position: relative;
+  background: rgba(12, 11, 29, 0.25); /* same transparent base */
+  border-radius: 18px;
+  padding: clamp(3rem, 6vw, 5rem);
+  width: min(90%, 1200px);
+  margin-inline: auto;
+  text-align: center;
+  backdrop-filter: blur(10px);
+
+  /* 🔮 Neon Magenta Border Glow */
+  border: 2px solid rgba(255, 102, 204, 0.6);
+  box-shadow: 0 0 12px rgba(255, 102, 204, 0.8),
+    0 0 24px rgba(255, 51, 187, 0.6), 0 0 48px rgba(255, 0, 170, 0.5),
+    inset 0 0 12px rgba(255, 102, 204, 0.4);
+}
+
+.story-title {
+  font-family: var(--ff-body);
+  color: var(--clr-light);
+  font-size: 1.8rem;
+
+  letter-spacing: 2px;
+  text-shadow: 0 0 10px rgba(6, 214, 160, 0.8);
+  margin-bottom: 1.5rem;
+}
+
+.story-body {
+  font-family: var(--ff-primary);
+  font-size: clamp(1rem, 2vw, 1.125rem);
+  line-height: 1.8;
+  color: var(--clr-light);
+  opacity: 0.95;
+}
+
+/* ==========================================================================
+   Skills Section — Two Column Layout
+   ========================================================================== */
+
+.my-skills {
+  background-color: var(--clr-dark);
+  color: var(--clr-light);
+  text-align: center;
+  padding-block: clamp(3em, 6vw, 5em);
+}
+
+.skills {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: clamp(2rem, 4vw, 3rem);
+  justify-items: center;
+  align-items: start;
+  max-width: 900px;
+  margin-inline: auto;
+  padding-inline: clamp(1rem, 5vw, 3rem);
+}
+
+/* Individual Skill Item */
+.skill {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  max-width: 420px;
+  padding-inline: 1rem;
+}
+
+/* Icon Styling */
+.skill i {
+  font-size: clamp(2.75rem, 5vw, 3.25rem);
+  margin-bottom: 1.25rem;
+  color: #ff5ed9;
+}
+
+/* Title Styling */
+.skill h3 {
+  font-family: var(--ff-headers);
+  font-size: clamp(1.1rem, 2.2vw, 1.35rem);
+  line-height: 1.3;
+  color: #7aefff;
+  text-shadow: 0 0 8px rgba(122, 239, 255, 0.8);
+  margin-bottom: 0.75rem;
+}
+
+/* Paragraph Styling */
+.skill p {
+  font-family: var(--ff-primary);
+  font-size: clamp(0.9rem, 1.5vw, 1rem);
+  line-height: 1.7;
+  color: var(--clr-light);
+  opacity: 0.95;
+  margin: 0;
+  max-width: 360px;
+}
+
+/* Responsive Behavior */
+@media (max-width: 768px) {
+  .skills {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+}
+
+/* ==========================================================================
+   About
+   ========================================================================== */
+.section__title--about {
+  font-family: var(--ff-headers);
+  font-size: clamp(2rem, 5vw, 3rem);
+  font-weight: 800;
+  text-transform: none;
+  color: #ffffff;
+  text-shadow: 0 0 8px #7aefff, 0 0 18px #7aefff,
+    0 0 32px rgba(122, 239, 255, 0.6), 0 0 45px rgba(255, 94, 217, 0.4);
+  margin-bottom: 1rem;
+  letter-spacing: -0.5px;
+}
+
+/* Optional: Add subtle hover pulse (same tone, not animated) */
+.section__title--about:hover {
+  text-shadow: 0 0 12px #7aefff, 0 0 30px #7aefff,
+    0 0 50px rgba(122, 239, 255, 0.8), 0 0 70px rgba(255, 94, 217, 0.6);
+  transition: text-shadow 0.3s ease;
+}
+.about-me {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding-block: clamp(3em, 6vw, 5em);
+}
+
+.about-me__body {
+  text-align: left;
+}
+
+.about-me__img {
+  width: min(80%, 220px);
+  margin: 2em auto 0;
+  border-radius: 4px;
+  display: block;
+  box-shadow: 0 0 12px rgba(255, 94, 217, 0.6), 0 0 24px rgba(255, 94, 217, 0.4),
+    0 0 36px rgba(122, 239, 255, 0.3);
+  transition: box-shadow 0.4s ease, transform 0.4s ease;
+}
+
+@media (min-width: 700px) {
+  .about-me {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    align-items: start;
+    column-gap: 2em;
+  }
+
+  .about-me__img {
+    width: 100%;
+    margin: 0;
+  }
+}
+
+/* ==========================================================================
+   Footer
+   ========================================================================== */
+.footer {
+  padding: 2em 1em;
+  text-align: center;
+
+  background: var(--clr-dark);
+}
+.footer__link {
+  color: var(--clr-accent);
+}
+.social-list {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1em;
+  margin: 2em 0 0;
+  padding: 0;
+}
+.social-list__item {
+  color: var(--clr-accent);
+}
+.social-list__link {
+  color: var(--clr-accent);
+  font-size: clamp(1.1rem, 2.5vw, 1.5rem);
+  font-weight: var(--fw-bold);
+}
+
+.footer__link:hover,
+.social-list__link:hover {
+  opacity: 0.7;
+  text-decoration: underline;
+  color: var(--clr-accent);
+}
