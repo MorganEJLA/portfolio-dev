@@ -145,246 +145,262 @@
       </section>
 
       <!-- Work Section -->
-      <section class="my-work" id="work">
-        <div class="content--wrapper">
-          <h2 class="section__title section__title--work">My work</h2>
-          <p class="section__subtitle section__subtitle--work">
+      <section id="work">
+        <div class="work-intro">
+          <p class="work-label">Selected work</p>
+          <h2 class="work-heading">My Work</h2>
+          <p class="work-subhead">
             A selection of projects that blend design, storytelling, and code
           </p>
+        </div>
 
-          <div class="portfolio--wrapper">
-            <div class="portfolio">
-              <!-- Portfolio Item 01 -->
-              <div class="portfolio-item">
-                <figure>
+        <div class="carousel-outer" id="carouselOuter">
+          <div class="carousel-track" id="carouselTrack">
+            <!-- CARD 1: Chromaterra -->
+            <article class="project-card">
+              <a
+                href="https://chromaterra.vercel.app/"
+                target="_blank"
+                rel="noopener"
+              >
+                <img
+                  class="card-img"
+                  src="img/chromaterra-img.jpg"
+                  alt="Chromaterra Global Color Atlas screenshot"
+                />
+              </a>
+              <div class="card-body">
+                <span class="card-tag">React · AI</span>
+                <h3 class="card-title">Chromaterra — Global Color Atlas</h3>
+                <p class="card-desc">
+                  Upload travel photos to extract culturally anchored color
+                  palettes, paired with fonts and saved by region.
+                </p>
+                <p class="card-skills">
+                  React · Claude AI API · Firebase · CSS · Responsive Design
+                </p>
+                <div class="card-links">
                   <a
+                    class="card-link"
                     href="https://chromaterra.vercel.app/"
                     target="_blank"
-                    rel="noopener noreferrer"
+                    rel="noopener"
+                    >View live ↗</a
                   >
-                    <img
-                      src="img/chromaterra-img.jpg"
-                      alt="Chromaterra | Global Color Atlas landing page screenshot"
-                    />
-                  </a>
-                </figure>
-                <h4>Chromaterra <br />Global Color Atlas</h4>
-                <p class="project--description">
-                  A React web app that transforms travel photos into named color
-                  palettes. Upload images from any place you've visited —
-                  Chromaterra extracts the colors, pairs them with fonts, and
-                  saves everything to a personal atlas organized by region.
-                </p>
-                <p>
-                  <span>Skills: </span>React · Claude AI API · CSS · Firebase ·
-                  Component Architecture · Responsive Design · User
-                  Authentication
-                </p>
-                <a
-                  class="portfolio-item-link"
-                  href="https://chromaterra.vercel.app/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  >Live Page</a
-                >
-              </div>
-
-              <!-- Portfolio Item 02 -->
-              <div class="portfolio-item">
-                <figure>
+                  <!-- UPDATE THIS HREF to your Chromaterra case study URL -->
                   <a
-                    href="https://codepen.io/collection/yrZxVx"
+                    class="card-link secondary"
+                    href="#"
                     target="_blank"
-                    rel="noopener noreferrer"
+                    rel="noopener"
+                    >Read case study ↗</a
                   >
-                    <img src="img/gdi-codepen.png" alt="GDI Codepen" />
-                  </a>
-                </figure>
-                <h4>GDI – Intro to CSS Animations Workshop</h4>
-                <p class="project-item-description">
-                  Created and presented an Intro to CSS Animations workshop for
-                  Girl Develop It. Used GDI’s Reveal.js slide template and a
-                  collection of live CodePen demos to teach transforms,
-                  keyframes, and animation timing in a hands-on way.
-                </p>
-                <p>
-                  <span>Skills: </span>CSS Animations · Reveal.js · CodePen ·
-                  GitHub
-                </p>
-                <a
-                  class="portfolio-item-link"
-                  href="https://codepen.io/collection/yrZxVx"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  >Live Page</a
-                >
+                </div>
               </div>
+            </article>
 
-              <!-- Portfolio Item 03 -->
-              <div class="portfolio-item">
-                <figure>
+            <!-- CARD 2: Universo da Doçura -->
+            <article class="project-card">
+              <a
+                href="https://universo-da-docura.com/"
+                target="_blank"
+                rel="noopener"
+              >
+                <img
+                  class="card-img"
+                  src="img/universo-build.png"
+                  alt="Universo da Doçura WordPress project screenshot"
+                />
+              </a>
+              <div class="card-body">
+                <span class="card-tag">WordPress · PHP</span>
+                <h3 class="card-title">Universo da Doçura</h3>
+                <p class="card-desc">
+                  A custom WordPress app built from the theme layer up — CPTs,
+                  ACF, MU-plugins, and a Swiper-powered dessert atlas.
+                </p>
+                <p class="card-skills">
+                  PHP · Custom Post Types · ACF · WP_Query · Vanilla JS
+                </p>
+                <div class="card-links">
                   <a
-                    href="https://morganejla.github.io/universo-gallery/"
+                    class="card-link"
+                    href="https://universo-da-docura.com/"
                     target="_blank"
-                    rel="noopener noreferrer"
+                    rel="noopener"
+                    >View live ↗</a
                   >
-                    <img
-                      src="img/universo-gallery.png"
-                      alt="Universo da Doçura WordPress Project Screenshot"
-                    />
-                  </a>
-                </figure>
-
-                <h4>Universo da Doçura — Custom WordPress Build</h4>
-
-                <p class="portfolio-item-description">
-                  A fully custom WordPress application built without page
-                  builders — coded from the theme layer up using PHP templates,
-                  custom post types, custom queries, MU-plugins, and
-                  JavaScript-powered UI. Universo da Doçura is an evolving
-                  digital archive of global dessert culture, where each locale,
-                  pastry, and artisan is dynamically generated through custom
-                  fields and relationships.
-                </p>
-
-                <p>
-                  <span>Skills: </span>
-                  Custom WordPress Theme Development · Custom Post Types
-                  (Locale, Pastry Case, Artisan) · Advanced Custom Fields (ACF)
-                  · Custom PHP Templates (archive-locale.php, single-locale.php,
-                  custom page templates) · MU-plugin architecture for Swiper.js
-                  locale hero slider · Custom <code>WP_Query</code>
-                  loops · Vanilla JS search overlay & mobile nav · Custom CSS ·
-                  Mobile-first responsive layout
-                </p>
-
-                <a
-                  class="portfolio-item-link"
-                  href="https://morganejla.github.io/universo-gallery/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  View Live
-                </a>
-              </div>
-
-              <!-- Portfolio Item 04 -->
-              <div class="portfolio-item">
-                <figure>
+                  <!-- UPDATE THIS HREF to your Universo case study URL -->
                   <a
-                    href="https://morganejla.github.io/theSugarStack/"
+                    class="card-link secondary"
+                    href="https://github.com/MorganEJLA/universo-gallery"
                     target="_blank"
-                    rel="noopener noreferrer"
+                    rel="noopener"
+                    >Read case study ↗</a
                   >
-                    <img
-                      src="img/theSugarStack-original.png"
-                      alt="the Sugar Stack screenshot"
-                    />
-                  </a>
-                </figure>
-                <h4>theSugarStack</h4>
-                <p class="portfolio-item-description">
-                  theSugarStack is a React-powered landing page that introduces
-                  a larger dessert-focused ecosystem. It showcases dynamic
-                  content rendering, reusable components, and layout systems
-                  that mirror the structure of my Universo da Doçura WordPress
-                  build — connecting React concepts to real-world data and
-                  cultural storytelling.
-                </p>
-                <p>
-                  <span>Skills: </span>React · Vite · Component Architecture ·
-                  JSX · CSS3 · Flexbox · Responsive Typography
-                </p>
-                <a
-                  class="portfolio-item-link"
-                  href="https://morganejla.github.io/theSugarStack/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  >Live Page</a
-                >
+                </div>
               </div>
+            </article>
 
-              <!-- Portfolio Item 05 -->
-              <div class="portfolio-item">
-                <figure>
+            <!-- CARD 3: Amanda Portfolio -->
+            <article class="project-card">
+              <a
+                href="https://amandacportfolio.com/"
+                target="_blank"
+                rel="noopener"
+              >
+                <img
+                  class="card-img"
+                  src="img/amanda-landing.png"
+                  alt="Custom WordPress portfolio screenshot"
+                />
+              </a>
+              <div class="card-body">
+                <span class="card-tag">WordPress · Figma-to-Code</span>
+                <h3 class="card-title">Custom WordPress Portfolio</h3>
+                <p class="card-desc">
+                  Figma design to custom WordPress build — Blocksy foundation,
+                  design-system-driven CSS, client-friendly editor.
+                </p>
+                <p class="card-skills">
+                  WordPress · Blocksy · Custom CSS · Responsive Design
+                </p>
+                <div class="card-links">
                   <a
+                    class="card-link"
                     href="https://amandacportfolio.com/"
                     target="_blank"
-                    rel="noopener noreferrer"
+                    rel="noopener"
+                    >View live ↗</a
                   >
-                    <img
-                      src="img/amanda-landing.png"
-                      alt="Custom WordPress portfolio screenshot"
-                    />
-                  </a>
-                </figure>
-
-                <h4>Custom WordPress Portfolio</h4>
-
-                <p class="portfolio-item-description">
-                  A fully custom WordPress portfolio built from a Figma design
-                  and developed from the ground up using Blocksy as a
-                  foundation. I implemented the layout, typography, and
-                  responsive behavior with custom CSS to achieve a
-                  design-system-driven front end while keeping the WordPress
-                  editor flexible and client-friendly.
-                </p>
-
-                <p>
-                  <span>Skills: </span>
-                  WordPress · Blocksy Theme & Plugins · Custom CSS · Responsive
-                  Design · Design Systems · Figma-to-Code ·
-                </p>
-
-                <a
-                  class="portfolio-item-link"
-                  href="https://amandacportfolio.com/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  Live Page
-                </a>
+                </div>
               </div>
+            </article>
 
-              <!-- Portfolio Item 06 -->
-              <div class="portfolio-item">
-                <figure>
+            <!-- CARD 4: theSugarStack -->
+            <article class="project-card">
+              <a
+                href="https://morganejla.github.io/theSugarStack/"
+                target="_blank"
+                rel="noopener"
+              >
+                <img
+                  class="card-img"
+                  src="img/theSugarStack-original.png"
+                  alt="theSugarStack screenshot"
+                />
+              </a>
+              <div class="card-body">
+                <span class="card-tag">React · Vite</span>
+                <h3 class="card-title">theSugarStack</h3>
+                <p class="card-desc">
+                  React landing page introducing the dessert-focused ecosystem —
+                  reusable components, dynamic content, cultural storytelling.
+                </p>
+                <p class="card-skills">
+                  React · Vite · JSX · Flexbox · Responsive Typography
+                </p>
+                <div class="card-links">
                   <a
+                    class="card-link"
+                    href="https://morganejla.github.io/theSugarStack/"
+                    target="_blank"
+                    rel="noopener"
+                    >View live ↗</a
+                  >
+                </div>
+              </div>
+            </article>
+
+            <!-- CARD 5: GDI Workshop -->
+            <article class="project-card">
+              <a
+                href="https://codepen.io/collection/yrZxVx"
+                target="_blank"
+                rel="noopener"
+              >
+                <img
+                  class="card-img"
+                  src="img/gdi-codepen.png"
+                  alt="GDI CSS Animations Workshop CodePen"
+                />
+              </a>
+              <div class="card-body">
+                <span class="card-tag">Teaching · CSS</span>
+                <h3 class="card-title">GDI — Intro to CSS Animations</h3>
+                <p class="card-desc">
+                  Created and presented an animations workshop for Girl Develop
+                  It — Reveal.js slides, live CodePen demos, keyframes and
+                  transforms.
+                </p>
+                <p class="card-skills">
+                  CSS Animations · Reveal.js · CodePen · GitHub
+                </p>
+                <div class="card-links">
+                  <a
+                    class="card-link"
+                    href="https://codepen.io/collection/yrZxVx"
+                    target="_blank"
+                    rel="noopener"
+                    >View live ↗</a
+                  >
+                </div>
+              </div>
+            </article>
+
+            <!-- CARD 6: SugarTrack Kanban -->
+            <article class="project-card">
+              <a
+                href="https://morganejla.github.io/kanban-board/"
+                target="_blank"
+                rel="noopener"
+              >
+                <img
+                  class="card-img"
+                  src="img/sugarTrackHero.png"
+                  alt="SugarTrack Kanban Board screenshot"
+                />
+              </a>
+              <div class="card-body">
+                <span class="card-tag">JavaScript · DOM</span>
+                <h3 class="card-title">SugarTrack — Kanban Board</h3>
+                <p class="card-desc">
+                  Fully interactive drag-and-drop Kanban board in vanilla JS.
+                  Create, edit, and persist tasks without a framework in sight.
+                </p>
+                <p class="card-skills">
+                  ES6 · HTML5 Drag & Drop API · localStorage · DOM Manipulation
+                </p>
+                <div class="card-links">
+                  <a
+                    class="card-link"
                     href="https://morganejla.github.io/kanban-board/"
                     target="_blank"
-                    rel="noopener noreferrer"
+                    rel="noopener"
+                    >View live ↗</a
                   >
-                    <img
-                      src="img/sugarTrackHero.png"
-                      alt="SugarTrack Kanban Board screenshot"
-                    />
-                  </a>
-                </figure>
-                <h4>theSugarStack – SugarTrack</h4>
-                <p class="project-item-description">
-                  A fully interactive Kanban-style board built with vanilla
-                  JavaScript. Users can create, edit, and drag tasks across
-                  columns, with data persisted in <code>localStorage</code>.
-                  Designed to demonstrate mastery of the DOM, native
-                  drag-and-drop, and lightweight state management without
-                  relying on a framework.
-                </p>
-                <p>
-                  <span>Skills: </span>JavaScript (ES6) · DOM Manipulation ·
-                  HTML5 Drag &amp; Drop API · Local Storage · Dynamic UI
-                  Rendering · State Management · Event Handling · Responsive
-                  Design · UX Interactivity
-                </p>
-                <a
-                  class="portfolio-item-link"
-                  href="https://morganejla.github.io/kanban-board/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  >Live Page</a
-                >
+                </div>
               </div>
-            </div>
+            </article>
           </div>
+          <!-- /.carousel-track -->
+        </div>
+        <!-- /.carousel-outer -->
+
+        <div class="carousel-controls">
+          <button
+            class="ctrl-btn"
+            id="carouselPrev"
+            aria-label="Previous projects"
+            disabled
+          >
+            &#8592;
+          </button>
+          <button class="ctrl-btn" id="carouselNext" aria-label="Next projects">
+            &#8594;
+          </button>
+          <div class="carousel-dots" id="carouselDots"></div>
+          <span class="carousel-count" id="carouselCount"></span>
         </div>
       </section>
 
@@ -478,6 +494,7 @@
       </footer>
 
       <script src="js/index.js"></script>
+      <script src="js/carousel.js"></script>
       <script
         src="https://kit.fontawesome.com/1f038b9845.js"
         crossorigin="anonymous"

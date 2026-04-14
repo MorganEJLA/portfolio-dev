@@ -100,7 +100,8 @@ i[class*=" fa-"] {
   --fs-h3: 1.25rem;
   --fs-body: 1rem;
 
-  --bs: 0.25em 0.25em 0.75em rgba(0, 0, 0, 0.25),
+  --bs:
+    0.25em 0.25em 0.75em rgba(0, 0, 0, 0.25),
     0.125em 0.125em 0.25em rgba(0, 0, 0, 0.15);
 }
 
@@ -174,7 +175,7 @@ strong {
    Buttons
    ========================================================================== */
 .btn,
-.portfolio-item-link {
+.project-card-link {
   display: inline-block;
   padding: 0.5em 2.5em;
   border-radius: 30px;
@@ -189,7 +190,7 @@ strong {
   transition: transform 0.3s ease;
 }
 
-.portfolio-item-link:hover {
+.project-card-link:hover {
   transform: scale(1.1);
 }
 
@@ -207,7 +208,9 @@ strong {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
   opacity: 0;
   pointer-events: none;
-  transition: opacity 0.3s ease, transform 0.3s ease;
+  transition:
+    opacity 0.3s ease,
+    transform 0.3s ease;
 }
 
 #topBtn.show {
@@ -270,12 +273,16 @@ header {
   font-size: clamp(1.2rem, 3vw, 1.8rem);
   text-decoration: none;
   letter-spacing: 1px;
-  transition: color 0.3s ease, text-shadow 0.3s ease;
+  transition:
+    color 0.3s ease,
+    text-shadow 0.3s ease;
 }
 
 .nav__link:hover {
   color: #06d6a0;
-  text-shadow: 0 0 8px #06d6a0, 0 0 16px #06d6a0;
+  text-shadow:
+    0 0 8px #06d6a0,
+    0 0 16px #06d6a0;
 }
 
 /* === HAMBURGER === */
@@ -291,7 +298,9 @@ header {
   right: 1em;
   z-index: 999;
   box-shadow: 0 0 12px rgba(6, 214, 160, 0.4);
-  transition: background 0.3s ease, box-shadow 0.3s ease;
+  transition:
+    background 0.3s ease,
+    box-shadow 0.3s ease;
 }
 
 .nav-toggle:hover {
@@ -353,7 +362,11 @@ header {
   color: #fff;
   text-transform: uppercase;
   letter-spacing: 2px;
-  text-shadow: 0 0 5px #fff, 0 0 10px #f0a, 0 0 20px #f0a, 0 0 40px #f0a;
+  text-shadow:
+    0 0 5px #fff,
+    0 0 10px #f0a,
+    0 0 20px #f0a,
+    0 0 40px #f0a;
   margin-bottom: 0.5em;
 }
 
@@ -363,7 +376,9 @@ header {
   color: #7aefff;
   font-size: clamp(1.25rem, 4vw, 2rem);
   letter-spacing: 1px;
-  text-shadow: 0 0 4px #7aefff, 0 0 10px #7aefff;
+  text-shadow:
+    0 0 4px #7aefff,
+    0 0 10px #7aefff;
   margin-bottom: 1.5em;
 }
 
@@ -374,14 +389,18 @@ header {
   font-family: var(--ff-secondary);
   font-size: clamp(1rem, 3vw, 1.5rem);
   color: #06d6a0;
-  text-shadow: 0 0 6px #06d6a0, 0 0 14px #06d6a0;
+  text-shadow:
+    0 0 6px #06d6a0,
+    0 0 14px #06d6a0;
   white-space: nowrap;
   margin-top: 1.5rem;
 }
 
 .cursor {
   color: #ef476f;
-  text-shadow: 0 0 5px #ef476f, 0 0 10px #ef476f;
+  text-shadow:
+    0 0 5px #ef476f,
+    0 0 10px #ef476f;
   margin-left: 0.25em;
   animation: blink 1s step-end infinite;
 }
@@ -416,66 +435,35 @@ header {
   padding: clamp(2em, 5vw, 3em);
 }
 
-.portfolio {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 2em;
-}
-/* Portfolio Card Headings */
-.portfolio-item h4 {
-  font-family: var(--ff-headers); /* Orbitron */
-  font-size: clamp(1.25rem, 2.5vw, 1.75rem);
-  color: var(--clr-highlight);
-
-  letter-spacing: 1px;
-  margin-top: 1.5rem; /* ⬆️ space above */
-  margin-bottom: 1rem; /* ⬇️ space below */
-}
-
-/* Optional: tighten the project descriptions below */
-.project-item-description,
-.portfolio-item-description {
-  margin-bottom: 1.25rem;
-  line-height: 1.6;
-}
-
-@media (min-width: 600px) {
-  .portfolio {
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    gap: 2.5em;
-  }
-}
-
-@media (min-width: 1000px) {
-  .portfolio {
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    gap: 3em;
-  }
-}
-
 /* === Retro-Wave Teal Glow for cards === */
-.portfolio-item {
+.project-card {
   color: var(--clr-light);
 
   border: 1px solid rgba(6, 214, 160, 0.4);
   border-radius: 16px;
-  box-shadow: 0 0 8px rgba(6, 214, 160, 0.4), 0 0 16px rgba(6, 214, 160, 0.25),
+  box-shadow:
+    0 0 8px rgba(6, 214, 160, 0.4),
+    0 0 16px rgba(6, 214, 160, 0.25),
     0 0 24px rgba(6, 214, 160, 0.15);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
   padding: 2rem 1.5rem;
 }
 
-.portfolio-item:hover {
+.project-card:hover {
   transform: translateY(-6px);
-  box-shadow: 0 0 12px rgba(6, 214, 160, 0.6), 0 0 30px rgba(6, 214, 160, 0.45),
+  box-shadow:
+    0 0 12px rgba(6, 214, 160, 0.6),
+    0 0 30px rgba(6, 214, 160, 0.45),
     0 0 45px rgba(6, 214, 160, 0.3);
 }
-.portfolio-item p {
+.project-card p {
   margin-bottom: 1.25rem;
   line-height: 1.6;
 }
 
-.portfolio-item p span {
+.project-card p span {
   font-weight: 600;
   color: var(--clr-accent-secondary);
 }
@@ -515,7 +503,9 @@ header {
   font-family: var(--ff-headers);
   font-size: clamp(1.1rem, 2.5vw, 1.4rem);
   color: #7aefff;
-  text-shadow: 0 0 6px #7aefff, 0 0 12px rgba(122, 239, 255, 0.6);
+  text-shadow:
+    0 0 6px #7aefff,
+    0 0 12px rgba(122, 239, 255, 0.6);
   margin: 0;
 }
 
@@ -544,8 +534,10 @@ header {
 
   /* 🔮 Neon Magenta Border Glow */
   border: 2px solid rgba(255, 102, 204, 0.6);
-  box-shadow: 0 0 12px rgba(255, 102, 204, 0.8),
-    0 0 24px rgba(255, 51, 187, 0.6), 0 0 48px rgba(255, 0, 170, 0.5),
+  box-shadow:
+    0 0 12px rgba(255, 102, 204, 0.8),
+    0 0 24px rgba(255, 51, 187, 0.6),
+    0 0 48px rgba(255, 0, 170, 0.5),
     inset 0 0 12px rgba(255, 102, 204, 0.4);
 }
 
@@ -644,16 +636,22 @@ header {
   font-weight: 800;
   text-transform: none;
   color: #ffffff;
-  text-shadow: 0 0 8px #7aefff, 0 0 18px #7aefff,
-    0 0 32px rgba(122, 239, 255, 0.6), 0 0 45px rgba(255, 94, 217, 0.4);
+  text-shadow:
+    0 0 8px #7aefff,
+    0 0 18px #7aefff,
+    0 0 32px rgba(122, 239, 255, 0.6),
+    0 0 45px rgba(255, 94, 217, 0.4);
   margin-bottom: 1rem;
   letter-spacing: -0.5px;
 }
 
 /* Optional: Add subtle hover pulse (same tone, not animated) */
 .section__title--about:hover {
-  text-shadow: 0 0 12px #7aefff, 0 0 30px #7aefff,
-    0 0 50px rgba(122, 239, 255, 0.8), 0 0 70px rgba(255, 94, 217, 0.6);
+  text-shadow:
+    0 0 12px #7aefff,
+    0 0 30px #7aefff,
+    0 0 50px rgba(122, 239, 255, 0.8),
+    0 0 70px rgba(255, 94, 217, 0.6);
   transition: text-shadow 0.3s ease;
 }
 .about-me {
@@ -671,9 +669,13 @@ header {
   margin: 2em auto 0;
   border-radius: 4px;
   display: block;
-  box-shadow: 0 0 12px rgba(255, 94, 217, 0.6), 0 0 24px rgba(255, 94, 217, 0.4),
+  box-shadow:
+    0 0 12px rgba(255, 94, 217, 0.6),
+    0 0 24px rgba(255, 94, 217, 0.4),
     0 0 36px rgba(122, 239, 255, 0.3);
-  transition: box-shadow 0.4s ease, transform 0.4s ease;
+  transition:
+    box-shadow 0.4s ease,
+    transform 0.4s ease;
 }
 
 @media (min-width: 700px) {
@@ -717,7 +719,9 @@ header {
   text-decoration: underline;
   text-underline-offset: 4px;
   text-decoration-color: rgba(255, 189, 247, 0.7);
-  transition: color 0.25s ease, text-decoration-color 0.25s ease,
+  transition:
+    color 0.25s ease,
+    text-decoration-color 0.25s ease,
     opacity 0.25s ease;
 }
 
@@ -741,7 +745,10 @@ header {
 .social-list__link {
   color: var(--clr-accent-secondary);
   opacity: 0.9;
-  transition: transform 0.25s ease, color 0.25s ease, opacity 0.25s ease;
+  transition:
+    transform 0.25s ease,
+    color 0.25s ease,
+    opacity 0.25s ease;
 }
 
 .social-list__link:hover {
@@ -770,7 +777,10 @@ header {
   color: var(--clr-accent-secondary);
   opacity: 0.88;
 
-  transition: color 0.25s ease, opacity 0.25s ease, transform 0.25s ease;
+  transition:
+    color 0.25s ease,
+    opacity 0.25s ease,
+    transform 0.25s ease;
 }
 
 .resume-action:hover {
@@ -811,7 +821,9 @@ header {
 
   background: linear-gradient(160deg, var(--clr-background), var(--clr-dark));
 
-  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.45), 0 0 40px rgba(217, 70, 239, 0.15);
+  box-shadow:
+    0 30px 60px rgba(0, 0, 0, 0.45),
+    0 0 40px rgba(217, 70, 239, 0.15);
 
   text-align: center;
 }
@@ -856,10 +868,169 @@ header {
   padding: 0.6rem 1.2rem;
   border-radius: 999px;
 
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
 }
 
 .coming-soon__link:hover {
   transform: translateY(-2px);
   box-shadow: 0 12px 30px rgba(255, 189, 247, 0.45);
+}
+/* ==========================================================================
+   Carousel — add these after your existing My Work styles
+   ========================================================================== */
+
+/* Shell */
+.carousel-outer {
+  overflow: hidden;
+  width: 100%;
+}
+
+.carousel-track {
+  display: flex;
+  gap: 1.5rem;
+  transition: transform 0.45s cubic-bezier(0.4, 0, 0.2, 1);
+  will-change: transform;
+  align-items: stretch;
+}
+
+/* Cards — the only addition to your existing .project-card */
+.project-card {
+  flex: 0 0 auto; /* width is set dynamically by carousel.js */
+  text-align: left;
+}
+
+/* Card image */
+.project-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 1.25rem;
+}
+
+.card-img,
+.project-card img {
+  object-position: top;
+}
+/* Card heading */
+.project-card h4 {
+  font-family: var(--ff-headers);
+  font-size: clamp(1.1rem, 2.5vw, 1.4rem);
+  color: var(--clr-highlight);
+  letter-spacing: 1px;
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+
+/* Case study / live links */
+.card-links {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-top: 0.5rem;
+}
+
+.card-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-family: var(--ff-buttons);
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--clr-accent);
+  text-decoration: none;
+  border-bottom: 1px solid rgba(139, 233, 253, 0.4);
+  padding-bottom: 2px;
+  width: fit-content;
+  transition:
+    color 0.2s,
+    border-color 0.2s;
+}
+
+.card-link:hover {
+  color: #fff;
+  border-color: #fff;
+}
+
+.card-link.secondary {
+  color: var(--clr-accent-secondary);
+  border-bottom-color: rgba(255, 189, 247, 0.3);
+}
+
+.card-link.secondary:hover {
+  color: #fff;
+  border-color: #fff;
+}
+
+/* Controls bar */
+.carousel-controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.ctrl-btn {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1px solid rgba(6, 214, 160, 0.5);
+  background: transparent;
+  color: var(--clr-light);
+  font-size: 18px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition:
+    background 0.2s,
+    box-shadow 0.2s;
+  line-height: 1;
+}
+
+.ctrl-btn:hover {
+  background: rgba(6, 214, 160, 0.1);
+  box-shadow: 0 0 10px rgba(6, 214, 160, 0.4);
+}
+
+.ctrl-btn:disabled {
+  opacity: 0.25;
+  cursor: default;
+  box-shadow: none;
+}
+
+.carousel-dots {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.carousel-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: rgba(6, 214, 160, 0.3);
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  transition:
+    background 0.2s,
+    transform 0.2s;
+}
+
+.carousel-dot.active {
+  background: #06d6a0;
+  transform: scale(1.35);
+  box-shadow: 0 0 6px rgba(6, 214, 160, 0.7);
+}
+
+.carousel-count {
+  font-family: var(--ff-primary);
+  font-size: 0.75rem;
+  color: rgba(122, 239, 255, 0.6);
+  letter-spacing: 0.08em;
 }
