@@ -13,7 +13,7 @@
     navLinks.forEach((link) =>
       link.addEventListener("click", () => {
         document.body.classList.remove("nav-open");
-      })
+      }),
     );
   }
 
@@ -39,9 +39,9 @@
     const words = [
       "Wordpress",
       "React",
-      "Vue.js",
-      "Django",
-      "Python",
+      "PHP",
+      "JavaScript",
+      "Firebase",
       "AI Integration",
     ];
     const typingSpeed = 120; // ms per letter
