@@ -37,7 +37,7 @@
   const typedText = document.getElementById("typed-text");
   if (typedText) {
     const words = [
-      "Wordpress",
+      "WordPress",
       "React",
       "PHP",
       "JavaScript",
