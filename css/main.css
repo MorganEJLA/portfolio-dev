@@ -467,6 +467,7 @@ header {
   font-weight: 600;
   color: var(--clr-accent-secondary);
 }
+
 /* ==========================================================================
    Skills Section — Clean Icon Section (no cards)
    ========================================================================== */
@@ -793,7 +794,6 @@ header {
   font-size: 0.95rem;
 }
 
-/* Optional: subtle glow (controlled, not radioactive) */
 .email-link,
 .social-list__link,
 .resume-action {
@@ -877,14 +877,10 @@ header {
   transform: translateY(-2px);
   box-shadow: 0 12px 30px rgba(255, 189, 247, 0.45);
 }
-/* ==========================================================================
-   Carousel — add these after your existing My Work styles
-   ========================================================================== */
 
 /* Shell */
 .carousel-outer {
-  overflow: hidden;
-  width: 100%;
+  margin-top: 2rem;
 }
 
 .carousel-track {
@@ -895,9 +891,8 @@ header {
   align-items: stretch;
 }
 
-/* Cards — the only addition to your existing .project-card */
 .project-card {
-  flex: 0 0 auto; /* width is set dynamically by carousel.js */
+  flex: 0 0 auto;
   text-align: left;
 }
 
@@ -909,12 +904,25 @@ header {
   border-radius: 8px;
   margin-bottom: 1.25rem;
 }
-
+.card-body {
+  padding: 0 1rem 1.5rem;
+}
 .card-img,
 .project-card img {
   object-position: top;
 }
+
 /* Card heading */
+.card-desc,
+.card-skills {
+  line-height: 1.6;
+  margin-bottom: 0.75rem;
+}
+
+.card-title {
+  line-height: 1.3;
+  margin-bottom: 0.5rem;
+}
 .project-card h4 {
   font-family: var(--ff-headers);
   font-size: clamp(1.1rem, 2.5vw, 1.4rem);
