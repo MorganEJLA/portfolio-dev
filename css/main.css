@@ -921,18 +921,22 @@ header {
   .carousel-outer {
     overflow: hidden;
   }
+  .carousel-track {
+    gap: 0 !important;
+  }
 
   .project-card {
-    width: 85vw !important;
-    min-width: 0 !important;
+    width: 100vw !important;
+    min-width: 100vw !important;
+    padding: 1rem !important;
   }
 
   .project-card img {
-    height: 160px;
+    height: 180px;
     width: 100%;
   }
 
   .card-body {
-    padding: 0 0.5rem 1rem;
+    padding: 0 0 1rem;
   }
 }
