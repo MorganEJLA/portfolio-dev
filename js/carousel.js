@@ -17,7 +17,7 @@
   function visibleCount() {
     const w = outer.offsetWidth;
     if (w >= 960) return 3;
-    if (w >= 580) return 2;
+    if (w >= 768) return 2;
     return 1;
   }
 
