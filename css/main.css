@@ -918,11 +918,21 @@ header {
     padding: 0.5rem !important;
     margin: 0 auto !important;
   }
+  .carousel-outer {
+    overflow: hidden;
+  }
+
   .project-card {
-    width: clamp(240px, 80vw, 320px) !important;
+    width: 85vw !important;
+    min-width: 0 !important;
   }
 
   .project-card img {
     height: 160px;
+    width: 100%;
+  }
+
+  .card-body {
+    padding: 0 0.5rem 1rem;
   }
 }
