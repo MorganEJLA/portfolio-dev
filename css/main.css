@@ -895,6 +895,9 @@ header {
   border-color: #a63d52;
 }
 @media (max-width: 768px) {
+  #pageLineArt {
+    display: none !important;
+  }
   .intro {
     padding: 2rem 1rem;
   }
