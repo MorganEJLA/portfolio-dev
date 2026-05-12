@@ -919,16 +919,17 @@ header {
     margin: 0 auto !important;
   }
   .carousel-outer {
-    overflow: hidden;
+    overflow: visible;
   }
   .carousel-track {
-    gap: 0 !important;
+    flex-direction: column !important;
+    transform: none !important;
+    gap: 1.5rem !important;
   }
 
   .project-card {
-    width: 100vw !important;
-    min-width: 100vw !important;
-    padding: 1rem !important;
+    width: 100% !important;
+    min-width: 0 !important;
   }
 
   .project-card img {
@@ -938,5 +939,8 @@ header {
 
   .card-body {
     padding: 0 0 1rem;
+  }
+  .carousel-controls {
+    display: none;
   }
 }
