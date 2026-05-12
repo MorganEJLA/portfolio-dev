@@ -894,3 +894,20 @@ header {
   background: #a63d52;
   border-color: #a63d52;
 }
+@media (max-width: 768px) {
+  .tech-dots {
+    gap: 0.75rem;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    justify-content: flex-start;
+    padding: 0 1rem;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .tech-dot__circle {
+    width: 70px;
+    height: 70px;
+    font-size: 0.6rem;
+    flex-shrink: 0;
+  }
+}
