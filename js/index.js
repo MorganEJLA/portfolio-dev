@@ -41,7 +41,6 @@
     const title = document.querySelector(".neon-title");
     const footer = document.querySelector(".footer");
     const sections = [
-      document.getElementById("story"),
       document.getElementById("skills"),
       document.getElementById("about"),
     ].filter(Boolean);
@@ -52,12 +51,15 @@
     const centerX = window.innerWidth / 2;
 
     const titleRect = title ? title.getBoundingClientRect() : null;
-    const titleBottom = titleRect ? titleRect.bottom + window.scrollY : 200;
-    const titleLeft = titleRect ? titleRect.left : centerX - 100;
-    const titleRight = titleRect ? titleRect.right : centerX + 100;
 
-    let d = `M ${titleLeft} ${titleBottom}`;
-    d += ` L ${titleRight} ${titleBottom}`;
+    const techDots = document.querySelector(".tech-dots");
+    const techDotsRect = techDots ? techDots.getBoundingClientRect() : null;
+    const titleBottom = techDotsRect
+      ? techDotsRect.top + window.scrollY + techDotsRect.height / 2
+      : 200;
+    const titleLeft = titleRect ? titleRect.left : centerX - 100;
+
+    let d = `M ${leftEdge} ${titleBottom}`;
     d += ` L ${rightEdge} ${titleBottom}`;
 
     let currentX = rightEdge;
