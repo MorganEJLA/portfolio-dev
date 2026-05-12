@@ -8,7 +8,6 @@
       content="Portfolio of Morgan Jones, Front-End & WordPress Developer specializing in custom themes, React/Vue interfaces, and story-driven web experiences."
     />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-
     <meta
       property="og:title"
       content="Morgan Jones | Front-End & WordPress Developer"
@@ -22,13 +21,8 @@
       property="og:image"
       content="https://morganejla.github.io/portfolio-dev/preview.png"
     />
-
     <link rel="manifest" href="site.webmanifest" />
     <link rel="icon" href="favicon.ico" />
-
-    <!-- Place favicon.ico in the root directory -->
-
-    <!-- ✅ Font Awesome (Latest) -->
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
@@ -36,24 +30,71 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
-
-    <!-- Base Styles -->
     <link rel="stylesheet" href="css/normalize.css" />
     <link rel="stylesheet" href="css/main.css" />
-
-    <meta name="theme-color" content="#fafafa" />
-
-    <!-- Google Fonts -->
+    <meta name="theme-color" content="#0c0b1d" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Bungee&family=Exo+2:ital,wght@0,100..900;1,100..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Orbitron:wght@400..900&family=Share+Tech+Mono&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Share+Tech+Mono&display=swap"
       rel="stylesheet"
     />
   </head>
 
   <body>
     <div class="container">
+      <svg
+        id="pageLineArt"
+        aria-hidden="true"
+        style="
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          pointer-events: none;
+          z-index: 0;
+          overflow: visible;
+        "
+      >
+        <path
+          id="pageLinePath"
+          fill="none"
+          stroke="#2E8B6E"
+          stroke-width="1"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          opacity="0.5"
+        />
+        <circle id="pageLineDot" r="3" fill="#A63D52" opacity="0" />
+        <circle id="pageLineDot" r="3" fill="#A63D52" opacity="0" />
+      </svg>
+      <svg
+        id="pageLineArt"
+        aria-hidden="true"
+        style="
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          pointer-events: none;
+          z-index: 0;
+          overflow: visible;
+        "
+      >
+        <path
+          id="pageLinePath"
+          fill="none"
+          stroke="#2E8B6E"
+          stroke-width="1"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          opacity="0.3"
+        />
+        <circle class="section-dot" r="6" fill="#C9983A" opacity="0" />
+        <circle class="section-dot" r="6" fill="#C9983A" opacity="0" />
+        <circle class="section-dot" r="6" fill="#C9983A" opacity="0" />
+        <circle id="pageLineDot" r="3" fill="#A63D52" opacity="0" />
+      </svg>
       <!-- Header / Navigation -->
       <header>
         <button class="nav-toggle" aria-label="toggle navigation">
@@ -81,9 +122,6 @@
       <section class="intro" id="home">
         <h1 class="neon-title">MORGAN JONES</h1>
         <p class="neon-subtitle">Front-End & WordPress Developer</p>
-        <p class="neon-typing">
-          <span id="typed-text"></span><span class="cursor">|</span>
-        </p>
       </section>
 
       <!-- Story Section -->
@@ -118,7 +156,7 @@
             <i class="fa-solid fa-pen-ruler"></i>
             <h3>Design–Dev Harmony</h3>
             <p>
-              Drawing from my time in art departments in TV & Film,I translate
+              Drawing from my time in art departments in TV & Film, I translate
               Figma files, moodboards, and story ideas into responsive
               interfaces that stay faithful to the design while respecting the
               realities of the build.
@@ -129,7 +167,7 @@
             <h3>React, Vue, and WordPress</h3>
             <p>
               I build across the stack and connect the pieces into coherent
-              ecosystems.Custom WordPress themes with Custom Post Types and
+              ecosystems. Custom WordPress themes with Custom Post Types and
               MU-plugins and React and Vue apps.
             </p>
           </div>
@@ -157,7 +195,6 @@
 
         <div class="carousel-outer" id="carouselOuter">
           <div class="carousel-track" id="carouselTrack">
-            <!-- CARD 1: Chromaterra -->
             <article class="project-card">
               <a
                 href="https://chromaterra.vercel.app/"
@@ -188,7 +225,6 @@
                     rel="noopener"
                     >View live ↗</a
                   >
-
                   <a
                     class="card-link secondary"
                     href="#"
@@ -200,7 +236,6 @@
               </div>
             </article>
 
-            <!-- CARD 2: Universo da Doçura -->
             <article class="project-card">
               <a
                 href="https://universo-da-docura.com/"
@@ -231,7 +266,6 @@
                     rel="noopener"
                     >View live ↗</a
                   >
-
                   <a
                     class="card-link secondary"
                     href="https://morganejla.github.io/universo-gallery/"
@@ -243,7 +277,6 @@
               </div>
             </article>
 
-            <!-- CARD 3: Amanda Portfolio -->
             <article class="project-card">
               <a
                 href="https://amandacportfolio.com/"
@@ -278,7 +311,6 @@
               </div>
             </article>
 
-            <!-- CARD 4: theSugarStack -->
             <article class="project-card">
               <a
                 href="https://morganejla.github.io/theSugarStack/"
@@ -313,7 +345,6 @@
               </div>
             </article>
 
-            <!-- CARD 5: GDI Workshop -->
             <article class="project-card">
               <a
                 href="https://codepen.io/collection/yrZxVx"
@@ -349,7 +380,6 @@
               </div>
             </article>
 
-            <!-- CARD 6: SugarTrack Kanban -->
             <article class="project-card">
               <a
                 href="https://morganejla.github.io/kanban-board/"
@@ -384,7 +414,6 @@
               </div>
             </article>
 
-            <!-- CARD 5: Queen of Coins Case Study -->
             <article class="project-card">
               <a
                 href="https://morganejla.github.io/queen-of-coins-case-study/"
@@ -417,7 +446,6 @@
                     rel="noopener"
                     >Case Study ↗</a
                   >
-
                   <a
                     class="card-link"
                     href="https://github.com/MorganEJLA/QueenOfCoins"
@@ -429,9 +457,7 @@
               </div>
             </article>
           </div>
-          <!-- /.carousel-track -->
         </div>
-        <!-- /.carousel-outer -->
 
         <div class="carousel-controls">
           <button
@@ -458,26 +484,24 @@
         <p class="section__subtitle section__subtitle--about">
           Front-End & WordPress developer based in Brooklyn, NY
         </p>
-
         <div class="about-me__body">
           <p>
             The sets are digital now, but the instincts remain. I still frame
             every page with intention — shaping moments, not just modules. From
             a custom WordPress dessert atlas with CPTs, MU-plugins, and Swiper
             sliders to React and Vue apps that explore music, memory, and
-            ritual, I’m building a connected ecosystem of projects that reflect
-            where I’ve been and where I’m headed as a developer.
+            ritual, I'm building a connected ecosystem of projects that reflect
+            where I've been and where I'm headed as a developer.
           </p>
           <p>
-            I’m especially interested in roles where I can own the front-end
+            I'm especially interested in roles where I can own the front-end
             experience, collaborate closely with designers, and keep pushing my
             WordPress and React skills on real products that care about both
             story and craft.
           </p>
         </div>
-
         <img
-          src="img/risograph-profile.png"
+          src="img/duotone-profile.jpg"
           alt="Portrait of Morgan Jones"
           class="about-me__img"
         />
@@ -486,10 +510,9 @@
       <!-- Footer -->
       <footer class="footer">
         <div class="contact-stack">
-          <a class="email-link" href="mailto:morganjones.ny@gmail.com">
-            morganjones.ny@gmail.com
-          </a>
-
+          <a class="email-link" href="mailto:morganjones.ny@gmail.com"
+            >morganjones.ny@gmail.com</a
+          >
           <ul class="social-list">
             <li class="social-list__item">
               <a
@@ -502,7 +525,6 @@
                 <i class="fab fa-github"></i>
               </a>
             </li>
-
             <li class="social-list__item">
               <a
                 class="social-list__link"
@@ -515,7 +537,6 @@
               </a>
             </li>
           </ul>
-
           <div class="resume-actions">
             <a
               class="resume-action"
@@ -526,7 +547,6 @@
               <i class="fas fa-file-lines" aria-hidden="true"></i>
               <span>View Resume</span>
             </a>
-
             <a
               class="resume-action"
               href="/assets/JonesMorgan_WebDeveloper-Resume2026.pdf"
