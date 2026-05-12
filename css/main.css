@@ -915,4 +915,7 @@ header {
     font-size: 0.55rem !important;
     padding: 0.75rem !important;
   }
+  #pageLineArt {
+    display: none;
+  }
 }
