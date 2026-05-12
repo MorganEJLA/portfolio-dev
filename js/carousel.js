@@ -14,12 +14,11 @@
   const GAP = 24; // matches 1.5rem gap at 16px base
   let current = 0;
 
-  function visibleCount() {
-    const w = outer.offsetWidth;
-    if (w >= 960) return 3;
-    if (w >= 768) return 2;
-    return 1;
-  }
+function visibleCount() {
+  if (window.innerWidth < 768) return 1;
+  if (window.innerWidth >= 960) return 3;
+  return 2;
+}
 
   function cardWidth() {
     const vc = visibleCount();
