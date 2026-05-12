@@ -23,6 +23,7 @@
 
   function cardWidth() {
     const vc = visibleCount();
+    if (vc === 1) return outer.offsetWidth;
     return (outer.offsetWidth - (vc - 1) * GAP) / vc;
   }
 
@@ -44,7 +45,8 @@
 
   function go(idx) {
     current = Math.max(0, Math.min(idx, maxIndex()));
-    const offset = current * (cardWidth() + GAP);
+    const gap = visibleCount() === 1 ? 0 : GAP;
+    const offset = current * (cardWidth() + gap);
     track.style.transform = `translateX(-${offset}px)`;
     prevBtn.disabled = current === 0;
     nextBtn.disabled = current >= maxIndex();
