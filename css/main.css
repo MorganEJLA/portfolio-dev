@@ -933,8 +933,10 @@ header {
   }
 
   .project-card img {
-    height: 180px;
     width: 100%;
+    height: auto;
+    max-height: 220px;
+    object-fit: cover;
   }
 
   .card-body {
@@ -942,5 +944,12 @@ header {
   }
   .carousel-controls {
     display: none;
+  }
+  .about-me__img {
+    margin-top: 2rem;
+  }
+
+  .about-me {
+    display: block;
   }
 }
