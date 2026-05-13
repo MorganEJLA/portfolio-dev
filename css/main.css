@@ -901,49 +901,44 @@ header {
     min-height: unset;
   }
   .intro {
-    justify-content: flex-start;
-    padding-top: 3rem;
-    min-height: unset;
+    justify-content: center;
+    padding: 3rem 1rem;
+    min-height: 100vh;
   }
+
   .neon-title {
     margin-bottom: 0.25em;
   }
+
   .neon-subtitle {
-    margin-bottom: 1rem;
+    margin-bottom: 1.5rem;
   }
+
   .tech-dots {
-    display: flex !important;
-    flex-direction: column !important;
-    align-items: flex-start !important;
-    gap: 0.5rem !important;
-    padding: 0 1rem !important;
+    display: grid !important;
+    grid-template-columns: repeat(3, 1fr) !important;
+    gap: 0.75rem !important;
+    margin-top: 1.5rem !important;
+    margin-bottom: 0 !important;
+    padding: 0 !important;
     width: 100% !important;
   }
 
-  .tech-dot:nth-child(1) {
-    margin-left: 0rem;
-  }
-  .tech-dot:nth-child(2) {
-    margin-left: 2.5rem;
-  }
-  .tech-dot:nth-child(3) {
-    margin-left: 5rem;
-  }
-  .tech-dot:nth-child(4) {
-    margin-left: 7.5rem;
-  }
-  .tech-dot:nth-child(5) {
-    margin-left: 10rem;
-  }
+  .tech-dot:nth-child(1),
+  .tech-dot:nth-child(2),
+  .tech-dot:nth-child(3),
+  .tech-dot:nth-child(4),
+  .tech-dot:nth-child(5),
   .tech-dot:nth-child(6) {
-    margin-left: 12.5rem;
+    margin-left: 0 !important;
   }
 
   .tech-dot__circle {
-    width: 70px !important;
-    height: 70px !important;
-    font-size: 0.55rem !important;
+    width: 80px !important;
+    height: 80px !important;
+    font-size: 0.6rem !important;
     padding: 0.5rem !important;
+    margin: 0 auto !important;
   }
 
   .carousel-outer {
