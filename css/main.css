@@ -901,7 +901,9 @@ header {
     min-height: unset;
   }
   .intro {
-    padding: 2rem 1rem;
+    justify-content: flex-start;
+    padding-top: 3rem;
+    min-height: unset;
   }
   .neon-title {
     margin-bottom: 0.25em;
@@ -913,33 +915,28 @@ header {
     display: flex !important;
     flex-direction: column !important;
     align-items: flex-start !important;
-    gap: 0 !important;
-    margin: 1rem;
-    padding: 0 !important;
+    gap: 0.5rem !important;
+    padding: 0 1rem !important;
     width: 100% !important;
   }
 
-  .tech-dot {
-    align-self: auto !important;
-  }
-
   .tech-dot:nth-child(1) {
-    margin-left: 0;
+    margin-left: 0rem;
   }
   .tech-dot:nth-child(2) {
-    margin-left: 3rem;
+    margin-left: 2.5rem;
   }
   .tech-dot:nth-child(3) {
-    margin-left: 6rem;
+    margin-left: 5rem;
   }
   .tech-dot:nth-child(4) {
-    margin-left: 9rem;
+    margin-left: 7.5rem;
   }
   .tech-dot:nth-child(5) {
-    margin-left: 12rem;
+    margin-left: 10rem;
   }
   .tech-dot:nth-child(6) {
-    margin-left: 15rem;
+    margin-left: 12.5rem;
   }
 
   .tech-dot__circle {
@@ -947,8 +944,8 @@ header {
     height: 70px !important;
     font-size: 0.55rem !important;
     padding: 0.5rem !important;
-    margin: 0 !important;
   }
+
   .carousel-outer {
     overflow: visible;
   }
