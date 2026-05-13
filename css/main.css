@@ -897,11 +897,17 @@ header {
 @media (max-width: 768px) {
   #pageLineArt {
     display: none !important;
+    min-height: unset;
   }
   .intro {
     padding: 2rem 1rem;
   }
-
+  .neon-title {
+    margin-bottom: 0.25em;
+  }
+  .neon-subtitle {
+    margin-bottom: 1rem;
+  }
   .tech-dots {
     display: grid !important;
     grid-template-columns: repeat(3, 1fr) !important;
