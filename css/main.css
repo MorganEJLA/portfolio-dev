@@ -901,9 +901,8 @@ header {
     min-height: unset;
   }
   .intro {
-    justify-content: center;
-    padding: 3rem 1rem;
-    min-height: 100vh;
+    min-height: unset !important;
+    padding: 3rem 1rem 2rem;
   }
 
   .neon-title {
