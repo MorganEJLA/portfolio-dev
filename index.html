@@ -56,18 +56,29 @@
           overflow: visible;
         "
       >
+        <defs>
+          <filter id="subtleGlow" x="-20%" y="-20%" width="140%" height="140%">
+            <feGaussianBlur stdDeviation="2.5" result="blur" />
+            <feMerge>
+              <feMergeNode in="blur" />
+              <feMergeNode in="SourceGraphic" />
+            </feMerge>
+          </filter>
+        </defs>
         <path
           id="pageLinePath"
           fill="none"
           stroke="#2E8B6E"
-          stroke-width="1"
+          stroke-width="3"
           stroke-linecap="round"
           stroke-linejoin="round"
-          opacity="0.5"
+          opacity="0.55"
+          filter="url(#subtleGlow)"
         />
         <circle id="pageLineDot" r="3" fill="#A63D52" opacity="0" />
         <circle id="pageLineDot" r="3" fill="#A63D52" opacity="0" />
       </svg>
+
       <svg
         id="pageLineArt"
         aria-hidden="true"
@@ -81,14 +92,24 @@
           overflow: visible;
         "
       >
+        <defs>
+          <filter id="subtleGlow2" x="-20%" y="-20%" width="140%" height="140%">
+            <feGaussianBlur stdDeviation="3" result="blur" />
+            <feMerge>
+              <feMergeNode in="blur" />
+              <feMergeNode in="SourceGraphic" />
+            </feMerge>
+          </filter>
+        </defs>
         <path
           id="pageLinePath"
           fill="none"
           stroke="#2E8B6E"
-          stroke-width="1"
+          stroke-width="3.5"
           stroke-linecap="round"
           stroke-linejoin="round"
-          opacity="0.3"
+          opacity="0.65"
+          filter="url(#subtleGlow2)"
         />
         <circle class="section-dot" r="6" fill="#C9983A" opacity="0" />
         <circle class="section-dot" r="6" fill="#C9983A" opacity="0" />
@@ -123,25 +144,25 @@
         <h1 class="neon-title">MORGAN JONES</h1>
         <p class="neon-subtitle">Front-End & WordPress Developer</p>
         <div class="tech-dots">
-        <div class="tech-dot">
-          <div class="tech-dot__circle">React</div>
+          <div class="tech-dot">
+            <div class="tech-dot__circle">React</div>
+          </div>
+          <div class="tech-dot">
+            <div class="tech-dot__circle">WordPress</div>
+          </div>
+          <div class="tech-dot">
+            <div class="tech-dot__circle">PHP</div>
+          </div>
+          <div class="tech-dot">
+            <div class="tech-dot__circle">JavaScript</div>
+          </div>
+          <div class="tech-dot">
+            <div class="tech-dot__circle">Firebase</div>
+          </div>
+          <div class="tech-dot">
+            <div class="tech-dot__circle">AI</div>
+          </div>
         </div>
-        <div class="tech-dot">
-          <div class="tech-dot__circle">WordPress</div>
-        </div>
-        <div class="tech-dot">
-          <div class="tech-dot__circle">PHP</div>
-        </div>
-        <div class="tech-dot">
-          <div class="tech-dot__circle">JavaScript</div>
-        </div>
-        <div class="tech-dot">
-          <div class="tech-dot__circle">Firebase</div>
-        </div>
-        <div class="tech-dot">
-          <div class="tech-dot__circle">AI</div>
-        </div>
-      </div>
       </section>
       <!-- Tech Stack -->
 
@@ -265,7 +286,7 @@
               >
                 <img
                   class="card-img"
-                  src="img/universo-build.png"
+                  src="img/universo-homepage-new.png"
                   alt="Universo da Doçura WordPress project screenshot"
                 />
               </a>
