@@ -58,42 +58,6 @@
       >
         <defs>
           <filter id="subtleGlow" x="-20%" y="-20%" width="140%" height="140%">
-            <feGaussianBlur stdDeviation="2.5" result="blur" />
-            <feMerge>
-              <feMergeNode in="blur" />
-              <feMergeNode in="SourceGraphic" />
-            </feMerge>
-          </filter>
-        </defs>
-        <path
-          id="pageLinePath"
-          fill="none"
-          stroke="#2E8B6E"
-          stroke-width="3"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          opacity="0.55"
-          filter="url(#subtleGlow)"
-        />
-        <circle id="pageLineDot" r="3" fill="#A63D52" opacity="0" />
-        <circle id="pageLineDot" r="3" fill="#A63D52" opacity="0" />
-      </svg>
-
-      <svg
-        id="pageLineArt"
-        aria-hidden="true"
-        style="
-          position: absolute;
-          top: 0;
-          left: 0;
-          width: 100%;
-          pointer-events: none;
-          z-index: 0;
-          overflow: visible;
-        "
-      >
-        <defs>
-          <filter id="subtleGlow2" x="-20%" y="-20%" width="140%" height="140%">
             <feGaussianBlur stdDeviation="3" result="blur" />
             <feMerge>
               <feMergeNode in="blur" />
@@ -109,7 +73,7 @@
           stroke-linecap="round"
           stroke-linejoin="round"
           opacity="0.65"
-          filter="url(#subtleGlow2)"
+          filter="url(#subtleGlow)"
         />
         <circle class="section-dot" r="6" fill="#C9983A" opacity="0" />
         <circle class="section-dot" r="6" fill="#C9983A" opacity="0" />
