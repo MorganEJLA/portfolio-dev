@@ -834,10 +834,12 @@ header {
   flex-wrap: wrap;
   position: relative;
 }
+
 .tech-dot {
   position: relative;
   z-index: 1;
 }
+
 .tech-dot__circle {
   width: 150px;
   height: 150px;
@@ -853,15 +855,10 @@ header {
   text-align: center;
   line-height: 1.4;
   color: #0c0b1d;
-  transition:
-    background 0.3s ease,
-    opacity 0.3s ease;
   padding: 1.25rem;
-}
-
-.tech-dot__circle:hover {
-  background: rgba(201, 152, 58, 0.15);
-  opacity: 0.85;
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
 }
 
 .tech-dot__label {
@@ -871,6 +868,7 @@ header {
   letter-spacing: 0.12em;
   text-transform: uppercase;
 }
+
 .tech-dot:nth-child(1) .tech-dot__circle {
   background: #c9983a;
   border-color: #c9983a;
@@ -895,11 +893,32 @@ header {
   background: #a63d52;
   border-color: #a63d52;
 }
+
+/* hover glows */
+.tech-dot:nth-child(1) .tech-dot__circle:hover,
+.tech-dot:nth-child(5) .tech-dot__circle:hover {
+  transform: scale(1.12);
+  box-shadow: 0 0 24px rgba(201, 152, 58, 0.7);
+}
+
+.tech-dot:nth-child(2) .tech-dot__circle:hover,
+.tech-dot:nth-child(6) .tech-dot__circle:hover {
+  transform: scale(1.12);
+  box-shadow: 0 0 24px rgba(166, 61, 82, 0.7);
+}
+
+.tech-dot:nth-child(3) .tech-dot__circle:hover,
+.tech-dot:nth-child(4) .tech-dot__circle:hover {
+  transform: scale(1.12);
+  box-shadow: 0 0 24px rgba(46, 139, 110, 0.7);
+}
+
 @media (max-width: 768px) {
   #pageLineArt {
     display: none !important;
     min-height: unset;
   }
+
   .intro {
     min-height: unset !important;
     padding: 3rem 1rem 2rem;
@@ -921,15 +940,6 @@ header {
     margin-bottom: 0 !important;
     padding: 0 !important;
     width: 100% !important;
-  }
-
-  .tech-dot:nth-child(1),
-  .tech-dot:nth-child(2),
-  .tech-dot:nth-child(3),
-  .tech-dot:nth-child(4),
-  .tech-dot:nth-child(5),
-  .tech-dot:nth-child(6) {
-    margin-left: 0 !important;
   }
 
   .tech-dot__circle {
