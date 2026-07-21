@@ -31,119 +31,40 @@
     window.topFunction = () => window.scrollTo({ top: 0, behavior: "smooth" });
   }
 
-  /* ========== LINE ANIMATION ========== */
-  function buildPageLine() {
-    const pathEl = document.getElementById("pageLinePath");
-    const dotEl = document.getElementById("pageLineDot");
-    const svgEl = document.getElementById("pageLineArt");
-    if (!pathEl || !svgEl) return;
-
-    const title = document.querySelector(".neon-title");
-    const footer = document.querySelector(".footer");
-    const sections = [
-      document.getElementById("skills"),
-      document.getElementById("about"),
-    ].filter(Boolean);
-
-    const pad = 64;
-    const leftEdge = 48;
-    const rightEdge = window.innerWidth - 48;
-    const centerX = window.innerWidth / 2;
-
-    const titleRect = title ? title.getBoundingClientRect() : null;
-
-    const techDots = document.querySelector(".tech-dots");
-    const techDotsRect = techDots ? techDots.getBoundingClientRect() : null;
-    const titleBottom = techDotsRect
-      ? techDotsRect.top + window.scrollY + techDotsRect.height / 2
-      : 200;
-    const titleLeft = titleRect ? titleRect.left : centerX - 100;
-
-    let d = `M ${leftEdge} ${titleBottom}`;
-    d += ` L ${rightEdge} ${titleBottom}`;
-
-    let currentX = rightEdge;
-    const transitionPoints = [];
-
-    sections.forEach((section) => {
-      const top = section.offsetTop - pad;
-      const bottom = section.offsetTop + section.offsetHeight + pad;
-      const otherX = currentX === rightEdge ? leftEdge : rightEdge;
-
-      transitionPoints.push({ x: currentX, y: top });
-
-      d += ` L ${currentX} ${top}`;
-      d += ` L ${otherX} ${top}`;
-      d += ` L ${otherX} ${bottom}`;
-
-      currentX = otherX;
-    });
-
-    if (footer) {
-      const footerBottom = footer.offsetTop + footer.offsetHeight + 16;
-      const otherX = currentX === rightEdge ? leftEdge : rightEdge;
-      d += ` L ${currentX} ${footerBottom}`;
-      d += ` L ${otherX} ${footerBottom}`;
-    }
-
-    pathEl.setAttribute("d", d);
-    svgEl.setAttribute("height", document.body.scrollHeight);
-
-    const length = pathEl.getTotalLength();
-    pathEl.style.strokeDasharray = length;
-    pathEl.style.strokeDashoffset = length;
-    dotEl.style.opacity = 0;
-
-    const sectionDots = document.querySelectorAll(".section-dot");
-    sectionDots.forEach((dot, i) => {
-      if (transitionPoints[i]) {
-        dot.setAttribute("cx", transitionPoints[i].x);
-        dot.setAttribute("cy", transitionPoints[i].y);
-      }
-    });
-
-    let started = false;
-    setTimeout(() => {
-      started = true;
-    }, 400);
-
-    window.addEventListener(
-      "scroll",
-      () => {
-        if (!started) return;
-        const scrollY = window.scrollY;
-        const maxScroll = document.body.scrollHeight - window.innerHeight;
-        const progress = Math.min(scrollY / maxScroll, 1);
-        pathEl.style.transition = "none";
-        pathEl.style.strokeDashoffset = length - length * progress;
-
-        sectionDots.forEach((dot, i) => {
-          if (!transitionPoints[i]) return;
-          const dotProgress =
-            transitionPoints[i].y / document.body.scrollHeight;
-          if (progress >= dotProgress) {
-            dot.style.transition = "opacity 0.3s ease";
-            dot.style.opacity = 1;
-          } else {
-            dot.style.opacity = 0;
-          }
-        });
-
-        if (progress >= 0.98) {
-          dotEl.style.transition = "opacity 0.3s ease";
-          dotEl.style.opacity = 1;
-          const pt = pathEl.getPointAtLength(length);
-          dotEl.setAttribute("cx", pt.x);
-          dotEl.setAttribute("cy", pt.y);
-        } else {
-          dotEl.style.opacity = 0;
+  /* ========== HERO TYPING EFFECT ========== */
+  const skillsList = [
+    "React",
+    "WordPress",
+    "PHP",
+    "JavaScript",
+    "Firebase",
+    "AI",
+  ];
+  const typeEl = document.getElementById("type-text");
+  if (typeEl) {
+    let skillIndex = 0,
+      charIndex = 0,
+      deleting = false;
+    function tick() {
+      const word = skillsList[skillIndex];
+      if (!deleting) {
+        charIndex++;
+        typeEl.textContent = word.slice(0, charIndex);
+        if (charIndex === word.length) {
+          deleting = true;
+          setTimeout(tick, 1100);
+          return;
         }
-      },
-      { passive: true },
-    );
+      } else {
+        charIndex--;
+        typeEl.textContent = word.slice(0, charIndex);
+        if (charIndex === 0) {
+          deleting = false;
+          skillIndex = (skillIndex + 1) % skillsList.length;
+        }
+      }
+      setTimeout(tick, deleting ? 40 : 80);
+    }
+    tick();
   }
-
-  window.addEventListener("load", () => {
-    setTimeout(buildPageLine, 300);
-  });
 })();

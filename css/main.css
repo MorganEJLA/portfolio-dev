@@ -209,9 +209,18 @@ strong {
    Header / Nav
    ========================================================================== */
 header {
-  display: flex;
-  justify-content: space-between;
-  padding: 1em;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1002;
+  background: transparent;
+  padding: 0;
+  pointer-events: none;
+}
+
+.nav-toggle {
+  pointer-events: auto;
 }
 
 .logo {
@@ -312,39 +321,69 @@ header {
    Hero
    ========================================================================== */
 .intro {
+  position: relative;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   text-align: center;
   min-height: calc(100vh - 80px);
-  background: var(--clr-background);
-  color: var(--clr-light);
+  background: var(--clr-accent); /* solid aquamarine */
+  color: var(--clr-dark);
   padding: 6rem 1.5rem;
+  overflow: hidden;
 }
 
-.neon-title {
-  font-family: var(--ff-title);
-  font-size: clamp(2.5rem, 8vw, 6rem);
-  color: var(--clr-light);
-  text-transform: uppercase;
-  letter-spacing: 0;
-  margin-bottom: 0.5em;
+.intro__avatar {
+  position: absolute;
+  bottom: 0;
+  left: clamp(1rem, 6vw, 6rem);
+  width: clamp(220px, 26vw, 380px);
+  height: auto;
 }
 
-.neon-subtitle {
-  font-family: var(--ff-primary);
-  color: var(--clr-accent-secondary);
-  font-size: clamp(1rem, 3vw, 1.5rem);
-  letter-spacing: 0.15em;
+.type-line {
+  font-family: var(--ff-secondary);
+  font-size: clamp(1.3rem, 2.6vw, 1.8rem);
+  color: var(--clr-dark);
+  margin-top: 2rem;
+  min-height: 1.4em;
 }
 
+.type-line .cursor {
+  display: inline-block;
+  width: 2px;
+  background: var(--clr-dark);
+  margin-left: 4px;
+  animation: blink 0.9s steps(1) infinite;
+}
+
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
+}
+@media (max-width: 700px) {
+  .intro {
+    padding-top: 5rem;
+  }
+
+  .intro__avatar {
+    position: static;
+    width: min(70%, 260px);
+    margin: 2rem auto 0;
+    display: block;
+  }
+}
 /* ==========================================================================
    Story
    ========================================================================== */
 .my-story {
-  background: var(--clr-background);
-  color: var(--clr-light);
+  background: #f4efe2;
+  background-image:
+    linear-gradient(rgba(79, 216, 196, 0.35) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(79, 216, 196, 0.35) 1px, transparent 1px);
+  background-size: 16px 16px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -353,91 +392,163 @@ header {
 
 .story-card {
   position: relative;
-  background: var(--clr-navy);
-  border-radius: 12px;
-  padding: clamp(2rem, 5vw, 4rem);
-  width: min(90%, 1200px);
+  width: min(90%, 900px);
   margin-inline: auto;
   text-align: center;
-  border: 0.5px solid rgba(232, 226, 217, 0.15);
+  color: #2a2318;
+}
+
+.story-callout {
+  position: absolute;
+  font-size: 11px;
+  line-height: 1.4;
+  color: #2a2318;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  max-width: 150px;
+  text-align: left;
+}
+
+.story-callout--tl {
+  top: -20px;
+  left: 0;
+}
+.story-callout--bl {
+  bottom: -30px;
+  left: 0;
 }
 
 .story-title {
   font-family: var(--ff-headers);
-  color: var(--clr-light);
-  font-size: clamp(1.5rem, 3vw, 2rem);
+  font-size: clamp(1.8rem, 4vw, 2.6rem);
+  color: transparent;
+  -webkit-text-stroke: 1.5px #2a2318;
   letter-spacing: 0;
   text-transform: uppercase;
-  margin-bottom: 1.5rem;
+  margin: 40px 0 24px;
 }
 
 .story-body {
   font-family: var(--ff-primary);
   font-size: clamp(1rem, 2vw, 1.125rem);
   line-height: 1.8;
-  color: rgba(232, 226, 217, 0.85);
+  color: rgba(42, 35, 24, 0.85);
+  margin-bottom: 40px;
+}
+
+.story-specs {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  font-size: 11px;
+  color: #6b6255;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  border-top: 1px dashed rgba(42, 35, 24, 0.3);
+  padding-top: 16px;
 }
 
 /* ==========================================================================
    Skills
    ========================================================================== */
 .my-skills {
-  background-color: var(--clr-background);
+  background-color: var(--clr-dark);
   color: var(--clr-light);
   text-align: center;
   padding-block: clamp(3em, 6vw, 5em);
 }
 
-.skills {
+.sign-ground {
+  position: relative;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: clamp(2rem, 4vw, 3rem);
   justify-items: center;
-  align-items: start;
-  max-width: 900px;
-  margin-inline: auto;
-  padding-inline: clamp(2rem, 5vw, 4rem);
-  overflow: visible;
+  align-items: end;
+  gap: 3rem 2rem;
+  max-width: 700px;
+  margin: 0 auto;
+  padding-bottom: 24px;
+  padding-top: 120px;
+  border-bottom: 10px solid var(--clr-light);
 }
 
-.skill {
+.sign-post {
   display: flex;
   flex-direction: column;
   align-items: center;
-  text-align: center;
-  max-width: 420px;
-  padding-inline: 1rem;
+  width: 260px;
+  cursor: pointer;
 }
 
-.skill i {
-  font-size: clamp(2.75rem, 5vw, 3.25rem);
-  margin-bottom: 1.25rem;
-  color: var(--clr-accent-secondary);
+.sign-graphic {
+  width: 100%;
+  height: auto;
+  max-height: 260px;
+  object-fit: contain;
+  filter: brightness(0) invert(1);
+  transition: transform 0.3s ease;
+}
+.sign-graphic--boost {
+  max-height: 380px;
+  max-width: 320px;
+}
+.sign-post:hover .sign-graphic {
+  transform: translateY(-4px);
 }
 
-.skill h3 {
+.sign-name {
   font-family: var(--ff-headers);
-  font-size: clamp(1.1rem, 2.2vw, 1.35rem);
-  line-height: 1.3;
-  color: var(--clr-accent);
-  margin-bottom: 0.75rem;
+  font-size: 0.85rem;
   text-transform: uppercase;
-  letter-spacing: 0;
+  letter-spacing: 0.02em;
+  line-height: 1.25;
+  text-align: center;
+  color: var(--clr-light);
+  margin: 8px 0 0;
 }
 
-.skill p {
+.sign-post:nth-child(odd) .leg {
+  height: 70px; /* signs 1 & 3 — long legs */
+}
+
+.sign-post:nth-child(even) .leg {
+  height: 40px; /* signs 2 & 4 — short legs */
+}
+
+.sign-desc {
   font-family: var(--ff-primary);
-  font-size: clamp(0.9rem, 1.5vw, 1rem);
-  line-height: 1.7;
-  color: rgba(232, 226, 217, 0.8);
-  margin: 0;
-  max-width: 360px;
+  font-size: 0.75rem;
+  line-height: 1.5;
+  color: rgba(232, 226, 217, 0.75);
+  text-align: center;
+  max-width: 200px;
+  height: 110px;
+  margin: 0 0 10px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.sign-post:hover .sign-desc {
+  opacity: 1;
 }
 
 @media (max-width: 768px) {
-  .skills {
-    grid-template-columns: 1fr;
-    gap: 2rem;
+  .sign-ground {
+    flex-direction: column;
+    align-items: center;
+    overflow-x: visible;
+    padding-top: 0;
+    border-bottom: none;
+  }
+  .sign-post {
+    width: 220px;
+    padding-top: 20px;
+    border-bottom: 4px solid var(--clr-light);
+    padding-bottom: 24px;
+    margin-bottom: 10px;
+  }
+  .sign-post:last-child {
+    border-bottom: none;
   }
 }
 
