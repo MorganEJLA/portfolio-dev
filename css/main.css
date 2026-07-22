@@ -68,10 +68,10 @@ i[class*=" fa-"] {
    Color Palette
    ========================================================================== */
 :root {
-  --ff-title: "Josefin Sans", sans-serif;
+  --ff-title: "Peralta", cursive;
   --ff-primary: "Inter", sans-serif;
   --ff-secondary: "Share Tech Mono", monospace;
-  --ff-headers: "Josefin Sans", sans-serif;
+  --ff-headers: "Peralta", cursive;
   --ff-buttons: "Share Tech Mono", monospace;
 
   --fw-reg: 400;
@@ -81,9 +81,9 @@ i[class*=" fa-"] {
   --clr-dark: #0c0b1d;
   --clr-navy: #1b2845;
   --clr-light: #e8e2d9;
-  --clr-highlight: #a63d52;
-  --clr-accent: #2e8b6e;
-  --clr-accent-secondary: #c9983a;
+  --clr-highlight: #1d7a72;
+  --clr-accent: #dd6f51;
+  --clr-accent-secondary: #d4a437;
   --clr-background: #0c0b1d;
 
   --fs-h1: 3rem;
@@ -327,10 +327,10 @@ header {
   justify-content: center;
   align-items: center;
   text-align: center;
-  min-height: calc(100vh - 80px);
+  min-height: 70vh;
   background: var(--clr-accent); /* solid aquamarine */
   color: var(--clr-dark);
-  padding: 6rem 1.5rem;
+  padding: 4rem 1.5rem;
   overflow: hidden;
 }
 
@@ -451,68 +451,96 @@ header {
 /* ==========================================================================
    Skills
    ========================================================================== */
+
+.skills-heading {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  gap: 0.75rem;
+  margin-bottom: 3rem;
+}
+
+.letter-sign {
+  width: 56px;
+  height: 64px;
+  border: 3px solid var(--clr-light);
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.letter-sign:nth-child(even) {
+  margin-bottom: 24px;
+}
+
+.letter-sign span {
+  font-family: var(--ff-headers);
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--clr-light);
+}
 .my-skills {
+  position: relative;
   background-color: var(--clr-dark);
   color: var(--clr-light);
   text-align: center;
   padding-block: clamp(3em, 6vw, 5em);
 }
-
-.sign-ground {
-  position: relative;
+.skills-avatar {
+  display: block;
+  margin: 3rem auto 0;
+  width: 220px;
+  height: auto;
+}
+.skills-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  justify-items: center;
-  align-items: end;
-  gap: 3rem 2rem;
-  max-width: 700px;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem 1.25rem;
+  max-width: 1000px;
   margin: 0 auto;
-  padding-bottom: 24px;
-  padding-top: 120px;
-  border-bottom: 10px solid var(--clr-light);
 }
 
-.sign-post {
+.skill-item {
+  position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 260px;
   cursor: pointer;
 }
 
-.sign-graphic {
+.skill-oval {
   width: 100%;
-  height: auto;
-  max-height: 260px;
-  object-fit: contain;
-  filter: brightness(0) invert(1);
-  transition: transform 0.3s ease;
-}
-.sign-graphic--boost {
-  max-height: 380px;
-  max-width: 320px;
-}
-.sign-post:hover .sign-graphic {
-  transform: translateY(-4px);
-}
-
-.sign-name {
+  max-width: 220px;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 1rem;
+  border: 2px solid var(--clr-light);
+  border-radius: 50%;
   font-family: var(--ff-headers);
-  font-size: 0.85rem;
+  font-size: 0.8rem;
   text-transform: uppercase;
   letter-spacing: 0.02em;
   line-height: 1.25;
   text-align: center;
   color: var(--clr-light);
-  margin: 8px 0 0;
+  transition:
+    border-color 0.3s ease,
+    box-shadow 0.3s ease,
+    text-shadow 0.3s ease;
 }
 
-.sign-post:nth-child(odd) .leg {
-  height: 70px; /* signs 1 & 3 — long legs */
-}
-
-.sign-post:nth-child(even) .leg {
-  height: 40px; /* signs 2 & 4 — short legs */
+.skill-item:hover .skill-oval {
+  border-color: var(--clr-accent-secondary);
+  box-shadow:
+    0 0 8px var(--clr-accent-secondary),
+    0 0 20px var(--clr-accent-secondary),
+    0 0 40px rgba(201, 152, 58, 0.4);
+  text-shadow:
+    0 0 6px var(--clr-accent-secondary),
+    0 0 14px var(--clr-accent-secondary);
 }
 
 .sign-desc {
@@ -521,34 +549,30 @@ header {
   line-height: 1.5;
   color: rgba(232, 226, 217, 0.75);
   text-align: center;
-  max-width: 200px;
-  height: 110px;
-  margin: 0 0 10px;
+  max-width: 220px;
+  margin-top: 12px;
   opacity: 0;
-  transition: opacity 0.3s ease;
+  max-height: 0;
+  overflow: hidden;
+  transition:
+    opacity 0.3s ease,
+    max-height 0.3s ease;
 }
 
-.sign-post:hover .sign-desc {
+.skill-item:hover .sign-desc {
   opacity: 1;
+  max-height: 150px;
 }
 
-@media (max-width: 768px) {
-  .sign-ground {
-    flex-direction: column;
-    align-items: center;
-    overflow-x: visible;
-    padding-top: 0;
-    border-bottom: none;
+@media (max-width: 900px) {
+  .skills-grid {
+    grid-template-columns: repeat(2, 1fr);
   }
-  .sign-post {
-    width: 220px;
-    padding-top: 20px;
-    border-bottom: 4px solid var(--clr-light);
-    padding-bottom: 24px;
-    margin-bottom: 10px;
-  }
-  .sign-post:last-child {
-    border-bottom: none;
+}
+
+@media (max-width: 600px) {
+  .skills-grid {
+    grid-template-columns: 1fr;
   }
 }
 
@@ -565,7 +589,13 @@ header {
   font-size: clamp(1rem, 2vw, 1.25rem);
   color: var(--clr-accent);
 }
-
+#work {
+  background-image: url("../img/wood-grain-optimized.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding-block: clamp(3em, 6vw, 5em);
+}
 .work-heading {
   font-family: var(--ff-headers);
   font-size: clamp(1.8rem, 4vw, 2.5rem);
