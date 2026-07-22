@@ -70,9 +70,9 @@ i[class*=" fa-"] {
 :root {
   --ff-title: "Peralta", cursive;
   --ff-primary: "Inter", sans-serif;
-  --ff-secondary: "Share Tech Mono", monospace;
+  --ff-secondary: "Special Elite", system-ui;
   --ff-headers: "Peralta", cursive;
-  --ff-buttons: "Share Tech Mono", monospace;
+  --ff-buttons: "Tilt Neon", sans-serif;
 
   --fw-reg: 400;
   --fw-bold: 700;
@@ -82,7 +82,7 @@ i[class*=" fa-"] {
   --clr-navy: #1b2845;
   --clr-light: #e8e2d9;
   --clr-highlight: #1d7a72;
-  --clr-accent: #dd6f51;
+  --clr-accent: #f18567;
   --clr-accent-secondary: #d4a437;
   --clr-background: #0c0b1d;
 
@@ -328,8 +328,8 @@ header {
   align-items: center;
   text-align: center;
   min-height: 70vh;
-  background: var(--clr-accent); /* solid aquamarine */
-  color: var(--clr-dark);
+  background: var(--clr-accent);
+  color: var(--clr-light);
   padding: 4rem 1.5rem;
   overflow: hidden;
 }
@@ -345,7 +345,7 @@ header {
 .type-line {
   font-family: var(--ff-secondary);
   font-size: clamp(1.3rem, 2.6vw, 1.8rem);
-  color: var(--clr-dark);
+  color: var(--clr-light);
   margin-top: 2rem;
   min-height: 1.4em;
 }
@@ -353,7 +353,7 @@ header {
 .type-line .cursor {
   display: inline-block;
   width: 2px;
-  background: var(--clr-dark);
+  background: var(--clr-light);
   margin-left: 4px;
   animation: blink 0.9s steps(1) infinite;
 }
@@ -419,10 +419,9 @@ header {
 }
 
 .story-title {
-  font-family: var(--ff-headers);
+  font-family: var(--ff-secondary);
   font-size: clamp(1.8rem, 4vw, 2.6rem);
-  color: transparent;
-  -webkit-text-stroke: 1.5px #2a2318;
+
   letter-spacing: 0;
   text-transform: uppercase;
   margin: 40px 0 24px;
@@ -459,7 +458,17 @@ header {
   gap: 0.75rem;
   margin-bottom: 3rem;
 }
+.skills-heading-row {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 10px;
+}
 
+.skills-avatar {
+  width: 180px; /* adjust to taste */
+  height: auto;
+}
 .letter-sign {
   width: 56px;
   height: 64px;
@@ -487,12 +496,7 @@ header {
   text-align: center;
   padding-block: clamp(3em, 6vw, 5em);
 }
-.skills-avatar {
-  display: block;
-  margin: 3rem auto 0;
-  width: 220px;
-  height: auto;
-}
+
 .skills-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -519,7 +523,7 @@ header {
   padding: 0 1rem;
   border: 2px solid var(--clr-light);
   border-radius: 50%;
-  font-family: var(--ff-headers);
+  font-family: var(--ff-buttons);
   font-size: 0.8rem;
   text-transform: uppercase;
   letter-spacing: 0.02em;
@@ -575,7 +579,30 @@ header {
     grid-template-columns: 1fr;
   }
 }
+@media (max-width: 700px) {
+  .skills-heading-row {
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+  }
 
+  .skills-heading {
+    gap: 0.4rem;
+  }
+
+  .letter-sign {
+    width: 40px;
+    height: 48px;
+  }
+
+  .letter-sign span {
+    font-size: 1.1rem;
+  }
+
+  .skills-avatar {
+    width: 140px;
+  }
+}
 /* ==========================================================================
    Work
    ========================================================================== */
@@ -720,17 +747,23 @@ header {
 
 .project-card img {
   width: 100%;
+}
+
+.card-img {
+  width: 100%;
   height: 200px;
   object-fit: cover;
-  border-radius: 8px;
+  object-position: top;
+  background: var(--clr-light);
+  padding: 10px 10px 32px 10px;
+  border-radius: 2px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.35);
+  transform: rotate(-2deg);
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
   margin-bottom: 1.25rem;
 }
-
-.card-img,
-.project-card img {
-  object-position: top;
-}
-
 .card-body {
   padding: 0 1rem 1.5rem;
 }
