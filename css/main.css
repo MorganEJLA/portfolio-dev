@@ -68,7 +68,7 @@ i[class*=" fa-"] {
    Color Palette
    ========================================================================== */
 :root {
-  --ff-title: "Peralta", cursive;
+  --ff-title: "Monoton", sans-serif;
   --ff-primary: "Inter", sans-serif;
   --ff-secondary: "Special Elite", system-ui;
   --ff-headers: "Peralta", cursive;
@@ -128,7 +128,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: var(--ff-headers);
+  font-family: var(--ff-title);
   letter-spacing: 0;
 }
 
@@ -328,7 +328,13 @@ header {
   align-items: center;
   text-align: center;
   min-height: 70vh;
-  background: var(--clr-accent);
+  background: #330b77e2;
+  background: linear-gradient(
+    135deg,
+    rgba(51, 11, 119, 1) 20%,
+
+    rgb(147, 125, 184) 100%
+  );
   color: var(--clr-light);
   padding: 4rem 1.5rem;
   overflow: hidden;
@@ -337,7 +343,7 @@ header {
 .intro__avatar {
   position: absolute;
   bottom: 0;
-  left: clamp(1rem, 6vw, 6rem);
+  left: clamp(1rem, 4vw, 4rem);
   width: clamp(220px, 26vw, 380px);
   height: auto;
 }
@@ -912,7 +918,7 @@ header {
   content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(180deg, #3c2a72 0%, #241a4a 100%);
+  background: linear-gradient(180deg, #635a7d 0%, #241a4a 100%);
   mix-blend-mode: multiply;
   opacity: 0.85;
   pointer-events: none;
@@ -1000,11 +1006,6 @@ header {
   color: var(--clr-light);
 }
 
-.footer a,
-.footer a:visited {
-  color: inherit;
-}
-
 .contact-stack {
   display: flex;
   flex-direction: column;
@@ -1012,10 +1013,17 @@ header {
   text-align: center;
   gap: 1.25rem;
 }
-
+@media (min-width: 700px) {
+  .contact-stack {
+    flex-direction: row;
+    justify-content: center;
+    text-align: left;
+    gap: 2.5rem;
+  }
+}
 .email-link {
   font-weight: var(--fw-bold);
-  color: var(--clr-accent-secondary);
+  color: var(--clr-light);
   text-decoration: underline;
   text-underline-offset: 4px;
   text-decoration-color: rgba(201, 152, 58, 0.5);
@@ -1025,8 +1033,8 @@ header {
 }
 
 .email-link:hover {
-  color: var(--clr-accent);
-  text-decoration-color: var(--clr-accent);
+  color: var(--clr-accent-secondary);
+  text-decoration-color: var(--clr-accent-secondary);
 }
 
 .social-list {
@@ -1083,77 +1091,4 @@ header {
 
 .resume-action i {
   font-size: 0.95rem;
-}
-
-@media (max-width: 768px) {
-  #pageLineArt {
-    display: none !important;
-    min-height: unset;
-  }
-
-  .intro {
-    min-height: unset !important;
-    padding: 3rem 1rem 2rem;
-  }
-
-  .neon-title {
-    margin-bottom: 0.25em;
-  }
-
-  .neon-subtitle {
-    margin-bottom: 1.5rem;
-  }
-
-  .tech-dots {
-    display: grid !important;
-    grid-template-columns: repeat(3, 1fr) !important;
-    gap: 0.75rem !important;
-    margin-top: 1.5rem !important;
-    margin-bottom: 0 !important;
-    padding: 0 !important;
-    width: 100% !important;
-  }
-
-  .tech-dot__circle {
-    width: 80px !important;
-    height: 80px !important;
-    font-size: 0.6rem !important;
-    padding: 0.5rem !important;
-    margin: 0 auto !important;
-  }
-
-  .carousel-outer {
-    overflow: visible;
-  }
-  .carousel-track {
-    flex-direction: column !important;
-    transform: none !important;
-    gap: 1.5rem !important;
-  }
-
-  .project-card {
-    width: 100% !important;
-    min-width: 0 !important;
-  }
-
-  .project-card img {
-    width: 100%;
-    height: auto;
-    max-height: 220px;
-    object-fit: cover;
-  }
-
-  .card-body {
-    padding: 0 0 1rem;
-  }
-  .carousel-controls {
-    display: none;
-  }
-  .about-me__img {
-    margin-top: 2rem;
-  }
-
-  .about-me {
-    display: block;
-  }
 }
