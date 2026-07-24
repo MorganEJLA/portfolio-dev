@@ -68,24 +68,32 @@ i[class*=" fa-"] {
    Color Palette
    ========================================================================== */
 :root {
-  --ff-title: "Monoton", sans-serif;
   --ff-primary: "Inter", sans-serif;
   --ff-secondary: "Special Elite", system-ui;
-  --ff-headers: "Peralta", cursive;
-  --ff-buttons: "Tilt Neon", sans-serif;
+  --ff-display: "Fontdiner Swanky", serif;
+  --ff-neon-accent: "Tilt Neon", sans-serif;
 
   --fw-reg: 400;
   --fw-bold: 700;
 
-  --clr-base: #0c0b1d;
   --clr-dark: #0c0b1d;
   --clr-navy: #1b2845;
   --clr-light: #e8e2d9;
   --clr-highlight: #1d7a72;
-  --clr-accent: #330b77e2;
-  --clr-accent-secondary: #d4a437;
+  --clr-header: linear-gradient(
+    135deg,
+    rgb(25, 15, 94) 20%,
+    rgb(67, 54, 163) 100%
+  );
+  --clr-accent: #ff8fa3;
   --clr-background: #0c0b1d;
-
+  --paper: #f3ecd9;
+  --grid: rgba(95, 140, 110, 0.28);
+  --ink: #221c15;
+  --ink-soft: #4a4238;
+  --terracotta: #c1602f;
+  --grease-red: #b23a2e;
+  --moss: #5f6e56;
   --fs-h1: 3rem;
   --fs-h2: 2.25rem;
   --fs-h3: 1.25rem;
@@ -128,7 +136,6 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: var(--ff-title);
   letter-spacing: 0;
 }
 
@@ -153,7 +160,7 @@ strong {
 }
 
 :focus {
-  outline: 3px solid var(--clr-accent);
+  outline: 3px solid var(--clr-highlight);
   outline-offset: 3px;
 }
 
@@ -241,6 +248,7 @@ header {
   transition: transform 0.4s ease-in-out;
   background: rgba(12, 11, 29, 0.75);
   border-left: 0.5px solid rgba(232, 226, 217, 0.1);
+  pointer-events: auto; /* header sets pointer-events: none — this restores clicks inside the nav panel */
 }
 
 .nav-open .nav {
@@ -267,14 +275,14 @@ header {
 }
 
 .nav__link:hover {
-  color: var(--clr-accent-secondary);
+  color: var(--clr-accent);
 }
 
 .nav-toggle {
-  background: rgba(232, 226, 217, 0.05);
-  border: 0.5px solid rgba(232, 226, 217, 0.2);
+  background: none;
+  border: 0.5px solid var(--clr-highlight);
   border-radius: 8px;
-  padding: 0.6em;
+  padding: 1em;
   cursor: pointer;
   position: fixed;
   top: 1em;
@@ -284,8 +292,8 @@ header {
 }
 
 .nav-toggle:hover {
-  background: rgba(201, 152, 58, 0.1);
-  border-color: rgba(201, 152, 58, 0.4);
+  background: none;
+  border-color: var(--clr-accent);
 }
 
 .hamburger,
@@ -295,7 +303,7 @@ header {
   display: block;
   width: 28px;
   height: 3px;
-  background: #fff;
+  background: var(--clr-accent);
   border-radius: 3px;
   transition: all 0.4s ease-in-out;
 }
@@ -321,6 +329,7 @@ header {
    Hero
    ========================================================================== */
 .intro {
+  font-family: var(--ff-primary);
   position: relative;
   display: flex;
   flex-direction: column;
@@ -328,18 +337,15 @@ header {
   align-items: center;
   text-align: center;
   min-height: 70vh;
-  background: #330b77e2;
-  background: linear-gradient(
-    135deg,
-    rgba(51, 11, 119, 1) 20%,
-
-    rgb(147, 125, 184) 100%
-  );
+  background: var(--clr-header);
   color: var(--clr-light);
   padding: 4rem 1.5rem;
   overflow: hidden;
 }
-
+.intro__title {
+  font-family: var(--ff-display);
+  letter-spacing: 0.06em;
+}
 .intro__avatar {
   position: absolute;
   bottom: 0;
@@ -551,11 +557,11 @@ header {
 }
 
 .skill-item:hover .skill-oval {
-  border-color: var(--clr-accent-secondary);
+  border-color: var(--clr-accent);
   box-shadow:
-    0 0 8px var(--clr-accent-secondary),
-    0 0 20px var(--clr-accent-secondary),
-    0 0 40px rgba(201, 152, 58, 0.4);
+    0 0 8px var(--clr-accent),
+    0 0 20px var(--clr-accent),
+    0 0 40px rgb(255, 143, 163, 0.5);
   text-shadow:
     0 0 6px var(--clr-accent-secondary),
     0 0 14px var(--clr-accent-secondary);
@@ -621,14 +627,6 @@ header {
    Work
    ========================================================================== */
 #work {
-  --paper: #f3ecd9;
-  --grid: rgba(95, 140, 110, 0.28);
-  --ink: #221c15;
-  --ink-soft: #4a4238;
-  --terracotta: #c1602f;
-  --grease-red: #b23a2e;
-  --moss: #5f6e56;
-
   padding: 50px 24px 80px;
 
   background: url("../img/cutting-mat-bg.jpg");
@@ -647,7 +645,7 @@ header {
   margin: 0 0 8px;
 }
 .work-heading {
-  font-family: var(--ff-buttons);
+  font-family: var(--ff-secondary);
   font-weight: 700;
   font-size: 40px;
   color: #f3ece0;
@@ -705,7 +703,7 @@ header {
   width: 100%;
   aspect-ratio: 4/3;
   object-fit: contain;
-  background: #ded1ba; /* fallback if the image path is wrong */
+  background: #ded1ba; 
 }
 .tape {
   position: absolute;
@@ -758,7 +756,7 @@ header {
 }
 
 .card-title {
-  font-family: "Fraunces", serif;
+  font-family: var(--ff-primary);
   font-weight: 700;
   font-size: 19px;
   line-height: 1.15;
@@ -1024,17 +1022,16 @@ header {
 .email-link {
   font-weight: var(--fw-bold);
   color: var(--clr-light);
-  text-decoration: underline;
+
   text-underline-offset: 4px;
-  text-decoration-color: rgba(201, 152, 58, 0.5);
-  transition:
-    color 0.25s ease,
+  text-decoration-color:
+    var(--clr-highlight) color 0.25s ease,
     text-decoration-color 0.25s ease;
 }
 
 .email-link:hover {
-  color: var(--clr-accent-secondary);
-  text-decoration-color: var(--clr-accent-secondary);
+  color: var(--clr-accent);
+  text-decoration-color: var(--clr-accent);
 }
 
 .social-list {
