@@ -72,6 +72,8 @@ i[class*=" fa-"] {
   --ff-secondary: "Special Elite", system-ui;
   --ff-display: "Fontdiner Swanky", serif;
   --ff-neon-accent: "Tilt Neon", sans-serif;
+  --ff-buttons: var(--ff-secondary);
+  --ff-headers: var(--ff-neon-accent);
 
   --fw-reg: 400;
   --fw-bold: 700;
@@ -82,8 +84,9 @@ i[class*=" fa-"] {
   --clr-highlight: #1d7a72;
   --clr-header: linear-gradient(
     135deg,
-    rgb(25, 15, 94) 20%,
-    rgb(67, 54, 163) 100%
+    rgba(51, 11, 119, 1) 20%,
+    rgba(29, 122, 114, 1) 75%,
+    rgba(57, 191, 180, 1) 100%
   );
   --clr-accent: #ff8fa3;
   --clr-background: #0c0b1d;
