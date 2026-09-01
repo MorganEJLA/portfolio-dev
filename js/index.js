@@ -68,6 +68,14 @@
     tick();
   }
 })();
+
+document.querySelectorAll('.ba-slider').forEach(slider => {
+  const handle = slider.querySelector('.ba-handle');
+  const beforeWrap = slider.querySelector('.ba-before-wrap');
+  handle.addEventListener('input', () => {
+    beforeWrap.style.clipPath = `inset(0 ${100 - handle.value}% 0 0)`;
+  });
+});
 /* ========== COPYRIGHT YEAR ========== */
 const yearEl = document.getElementById("copyrightYear");
 if (yearEl) yearEl.textContent = new Date().getFullYear();

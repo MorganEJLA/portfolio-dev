@@ -926,7 +926,8 @@ header {
   position: relative;
   aspect-ratio: 16 / 9;
 }
-.shot-hero img {
+.shot-hero img,
+.shot-hero video {
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -959,6 +960,7 @@ header {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: left;
   border: 1px solid rgba(20, 40, 30, 0.3);
   filter: sepia(8%);
 }
@@ -975,6 +977,80 @@ header {
 }
 .shot-thumbs.two-col {
   grid-template-rows: 1fr;
+}
+.shot-compare {
+  position: relative;
+  grid-column: span 2;
+  overflow: hidden;
+}
+.ba-slider {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  border: 1px solid rgba(20, 40, 30, 0.3);
+}
+.ba-slider img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: sepia(8%);
+}
+.ba-before-wrap {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  clip-path: inset(0 50% 0 0);
+}
+.ba-before-wrap img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.ba-handle {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  appearance: none;
+  background: transparent;
+  cursor: ew-resize;
+}
+.ba-handle::-webkit-slider-thumb {
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #ff2d78;
+  border: 2px solid #fff;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+  cursor: ew-resize;
+}
+
+.ba-handle::-moz-range-thumb {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #ff2d78;
+  border: 2px solid #fff;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+  cursor: ew-resize;
+}
+.shot-compare .thumb-label {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(34, 28, 21, 0.78);
+  color: var(--paper);
+  font-size: 10px;
+  letter-spacing: 0.04em;
+  padding: 3px 6px;
 }
 @media (max-width: 760px) {
   .spec-body {
